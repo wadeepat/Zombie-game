@@ -62,4 +62,5 @@ void character(){
     textcolor(14,0);
     cout << "   **";
     resetcolor();
+    
 }
