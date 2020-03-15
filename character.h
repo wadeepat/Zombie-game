@@ -83,3 +83,18 @@ void gun_m16(){
 
     resetcolor();
 }
+
+void herb(){
+    textcolor(10,0);
+    cout << "\t *\n";
+    cout << "\t****\n";
+    cout << "\t*****\n";
+    cout << "\t  **    **\n";
+
+    textcolor(2,0);
+    cout << "\t   *  ***\n";
+    cout << "\t    **\n";
+    cout << "\t    *\n";
+
+    resetcolor();
+}
