@@ -102,9 +102,3 @@ void playgame::create_account(){
 	cout<<".";
 	Sleep(400);	
 }
-int main(){
-    namegame();
-    playgame x;
-    x.main_menu();
-    return 0;
-}
