@@ -62,5 +62,24 @@ void character(){
     textcolor(14,0);
     cout << "   **";
     resetcolor();
-    
+
+}
+
+void gun_m16(){
+    textcolor(8,0);
+    cout << "\t\t\t        **"<< "\n";
+    cout << "\t    **********************\n";
+    cout << "\t********************************\n";
+    cout << "\t********************************\n";
+    cout << "\t****  *************\n";
+    cout << "\t****  **";
+
+    textcolor(7,0);
+    cout << "**";
+
+    textcolor(8,0);
+    cout << "*     ***\n";
+    cout << "\t      ***        ***\n";
+
+    resetcolor();
 }
