@@ -13,13 +13,6 @@ void gotoxy(int x,int y){
     coord.Y=y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
 }
-
-// char map0[10][1]={
-//     "#######   #######",
-//     "##             ##",
-//     "##             ##",
-//     "#################",
-// };
 char map[17][79]={
     "#########################      ###############################################",
     "#@                     ##      ##                       ##      *   *       ##",                                                
@@ -36,7 +29,45 @@ char map[17][79]={
     "##  *  ##                              *    ##                               |",                                                  
     "#########                                   ##                              ##",
     "##                                          ##                              ##",
+    "##                                                                          ##",
+    "##############################################################################"
+};
+char map2[17][79]={
+    "#########################      ###############################################",
+    "#                      ##      ##                       ##      *   *       ##",                                                
+    "##                     ##      ##                                           ##",                                                
+    "##                     ##########                       ##                  ##",                                                
+    "##                     ##    *                          ##                  ##",                                                 
+    "##                     ##########                       #########   ##########",                                                
+    "###################                                                         ##",                                                
+    "##    *##        ##                                                         ##",                                              
+    "##     ##        ##                                                         ##",                                                 
+    "##               ##                                                         ##",                                                 
+    "##     ##        ##                 *                                       ##",                                                  
+    "##     ##        #############################                              ##",                                                  
+    "|      ##                              *    ##                               |",                                                  
+    "#########                                   ##                              ##",
+    "##                                          ##                              ##",
     "## * ##                                                                     ##",
+    "##############################################################################"
+};
+char map1[17][79]={
+    "#########################      ###############################################",
+    "#@                     ##      ##                       ##      *   *       ##",                                                
+    "##                     ##      ##                                           ##",                                                
+    "##                     ##########                       ##                  ##",                                                
+    "##                     ##    *                          ##                  ##",                                                 
+    "##                     ##########                       #########   ##########",                                                
+    "###################                                                         ##",                                                
+    "##    *##        ##                                                         ##",                                              
+    "##     ##        ##                                                         ##",                                                 
+    "##               ##                                                         ##",                                                 
+    "##     ##        ##                                                         ##",                                                  
+    "##     ##        #############################                              ##",                                                  
+    "##  *  ##                              *    ##                               |",                                                  
+    "#########                                   ##                              ##",
+    "##                                          ##                              ##",
+    "##                                                                          ##",
     "##############################################################################"
 };
 
@@ -77,34 +108,69 @@ void drawmap(int score){
     cout<<endl;
     charactordata("Liw",100,"NORMAL","NORMAL",1);
 }
-void changemap(){
-
+void changemap(int &locmap,int &x,int &y){
+    if(locmap==1){
+        for(int i=0;i<17;i++){
+            for(int j=0;j<79;j++){
+                map1[i][j]=map[i][j];
+            }
+        }
+        for(int i=0;i<17;i++){
+            for(int j=0;j<79;j++){
+                map[i][j]=map2[i][j];
+            }
+        }
+        x=12;
+        y=1;
+        map[12][1]='@';
+        locmap=2;
+    
+    }
+    else if(locmap==2 && x==12 && y==1){
+        for(int i=0;i<17;i++){
+            for(int j=0;j<79;j++){
+                map2[i][j]=map[i][j];
+            }
+        }
+        for(int i=0;i<17;i++){
+            for(int j=0;j<79;j++){
+                map[i][j]=map1[i][j];
+            }
+        }
+        x=12;
+        y=76;
+        map[12][76]='@';
+        locmap=1;
+    } 
 }
-void move(char &press,int &x,int&y,int score){
+void move(char &press,int &x,int&y,int score,int locmap){
     if(press=='w'){
-        if(map[x-1][y]=='|')
-        if(map[x-1][y]!='#' && map[x-1][y]!='|'){
+        if(map[x-1][y]=='|') changemap(locmap,x,y);
+        else if(map[x-1][y]!='#'){
             map[x][y]=' ';
             x=x-1;
             map[x][y]='@';
         }
     }
-    if(press=='a'){
-        if(map[x][y-1]!='#' && map[x][y-1]!='|'){
+    else if(press=='a'){
+        if(map[x][y-1]=='|') changemap(locmap,x,y);
+        else if(map[x][y-1]!='#'){
             map[x][y]=' ';
             y=y-1;
             map[x][y]='@';
         }
     }
-    if(press=='s'){
-        if(map[x+1][y]!='#' && map[x+1][y]!='|'){
+    else if(press=='s'){
+        if(map[x+1][y]=='|') changemap(locmap,x,y);
+        else if(map[x+1][y]!='#'){
             map[x][y]=' ';
             x=x+1;
             map[x][y]='@';
         }
     }
-    if(press=='d'){
-        if(map[x][y+1]!='#' && map[x][y+1]!='|'){
+    else if(press=='d'){
+        if(map[x][y+1]=='|') changemap(locmap,x,y);
+        else if(map[x][y+1]!='#'){
             map[x][y]=' ';
             y=y+1;
             map[x][y]='@';
@@ -123,14 +189,15 @@ int main(){
     system("cls");
     int x=1;
     int y=1;
-    int score,locmap;
+    int score=0;
+    int locmap=1;
     char key,press;
     drawmap(score);
     
     while(gamerunning){
         key=getch();
         press=key;
-        if(press=='w'|| press=='a'|| press=='s'|| press=='d')move(press,x,y,score);
+        if(press=='w'|| press=='a'|| press=='s'|| press=='d')move(press,x,y,score,locmap);
         if(key=='f')gamerunning=false;  
     }
 }
