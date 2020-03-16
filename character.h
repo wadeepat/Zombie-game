@@ -134,6 +134,7 @@ void zombie(){
     cout << "\t  * ";
     textcolor(5,0);
     cout << "  *****\n";
+    
 
     resetcolor();
 }
