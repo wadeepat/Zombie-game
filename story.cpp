@@ -9,16 +9,19 @@ using namespace std;
 using namespace std;
 
 void showstory(int );
+void tutorial();
 
 int main(){
     int i = 1;
     showstory(i);
     i = 2;
-    showstory(i);
+    if(getch())showstory(i);
     i = 3;
-    while(1){
-    showstory(i);   
-    }
+    if(getch())showstory(i);
+    if(getch())tutorial();
+    while (1) if(getch()) break;
+    
+    
     
 
 
@@ -27,11 +30,11 @@ int main(){
 void showstory(int a){
     char s1[] = " The king of the land who need to resurrect him a dog. He calls on the doctor research pill in the cellar and finds herbs at the north. People believe that herbs can help the body become alive again.";
     char s2[] = " The doctor essay and have the result But a dog becomes a zombie. And the servant doesn't beware so he becomes a zombie as well. And this epidemic has grown increasingly wide area. The doctor in the castle has searched for a solution. And that Zombie is dead when the brain is destroyed.";
-    char s3[] = " And disease will disappear when mixing herbal medicine, so you had to find herbs and ingredients to cooked as an antidote to the plague to resolve  and public support, as well as to make the country can return to peace again.";
+    char s3[] = " And disease will disappear when mixing herbal medicine, so you had to find herbs and ingredients to cooked as an antidote to the  plague to resolve and public support, as well as to make the country can return to peace again.";
     char c[] = ".,";
     int count=0,k,num;
 
-    for(int j=0;j < 96;j++){
+    for(int j=0;j < 78;j++){
         cout << "#";
     }
     cout << "\n" ;
@@ -39,7 +42,7 @@ void showstory(int a){
         cout << "#";
         if(i==8 || i==15){
             cout << " ";
-            for(int j=0;j<92;j++){
+            for(int j=0;j<74;j++){
                 textcolor(4,0);
                 cout << "-";
             }
@@ -51,7 +54,7 @@ void showstory(int a){
             if(num <=3 && i > 9){
                 textcolor(12,0);
                 if(a == 1){
-                    for(int n=0;n<92;n++){
+                    for(int n=0;n<74;n++){
                     
                     cout << s1[count];
                     count++;
@@ -64,13 +67,13 @@ void showstory(int a){
                         }
                         
                     }
-                    while(k<90){
+                    while(k<72){
                     cout << " ";
                     k++;
                     }
                 }
                 if(a == 2){
-                    for(int n=0;n<92;n++){
+                    for(int n=0;n<74;n++){
                     cout << s2[count];
                     count++;
                     k=n;
@@ -82,13 +85,13 @@ void showstory(int a){
                         }
                         
                     }
-                    while(k<90){
+                    while(k<72){
                     cout << " ";
                     k++;
                     }
                 }
                 if(a == 3){
-                    for(int n=0;n<92;n++){
+                    for(int n=0;n<74;n++){
                     cout << s3[count];
                     count++;
                     k=n;
@@ -100,19 +103,19 @@ void showstory(int a){
                         }
                         
                     }
-                    while(k<90){
+                    while(k<72){
                     cout << " ";
                     k++;
                     }
                 }    
                     
             }else{
-                for(int n=0;n<92;n++) cout << " ";
+                for(int n=0;n<74;n++) cout << " ";
             }
             textcolor(4,0);
             cout << "|";
         }else{
-            for(int j=0;j<94;j++){
+            for(int j=0;j<76;j++){
                 cout << " ";
             }
         }
@@ -120,11 +123,27 @@ void showstory(int a){
         cout << "#";
         cout << "\n" ;
     }
-    for(int j=0;j < 96;j++){
+    for(int j=0;j < 78;j++){
         cout << "#";
     }
     cout << "\n";
     
+}
+
+void tutorial(){
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    textcolor(3,0); 
+    cout << "               : _____ .  . _____  __   __  _____   _   .     :              \n";
+    cout << "               :   |   |  |   |   |  | |__|   |    /_\\  |     :              \n";
+    cout << "               :   |   |__|   |   |__| |  \\ __|__ /   \\ |___  :              \n";
+    resetcolor();
+    cout << "                                                                              \n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+
 }
 
 
