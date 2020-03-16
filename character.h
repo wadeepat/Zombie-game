@@ -98,3 +98,43 @@ void herb(){
 
     resetcolor();
 }
+
+void zombie(){
+    textcolor(11,0);
+    cout << "\t     *****\n";
+    
+    cout << "\t    *";
+    textcolor(7,0);
+    cout << "* *";
+    textcolor(11,0);
+    cout << "***\n";
+
+    cout << "\t    *";
+    textcolor(7,0);
+    cout << "****";
+    textcolor(11,0);
+    cout << "**\n";
+
+    textcolor(7,0);
+    cout << "\t      ****";
+    textcolor(11,0);
+    cout << "*\n";
+
+    textcolor(11,0);
+    cout << "\t *****";
+    textcolor(5,0);
+    cout << "*****\n";
+
+    textcolor(11,0);
+    cout << "\t*  *******";
+    textcolor(5,0);
+    cout << "*\n";
+
+    textcolor(11,0);
+    cout << "\t  * ";
+    textcolor(5,0);
+    cout << "  *****\n";
+
+
+    resetcolor();
+}
