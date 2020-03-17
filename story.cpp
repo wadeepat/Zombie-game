@@ -10,6 +10,12 @@ using namespace std;
 
 void showstory(int );
 void tutorial();
+void gotoxy(int x,int y){
+    COORD coord;
+    coord.X=x;
+    coord.Y=y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
+}
 
 int main(){
     int i = 1;
@@ -17,6 +23,8 @@ int main(){
     i = 2;
     if(getch())showstory(i);
     i = 3;
+    if(getch())showstory(i);
+    i = 4;
     if(getch())showstory(i);
     if(getch())tutorial();
     while (1) if(getch()) break;
@@ -28,9 +36,10 @@ int main(){
 }
 
 void showstory(int a){
-    char s1[] = " The king of the land who needed to resurrect his dog. He told the doctor to research pills in the cellar and find herbs at the north. People believe that herbs can help the corpse become alive again.";
-    char s2[] = " The doctor did the experiment But the result made the dog became a zombie. The servant in the castle didn't beware so he was biten by the dog and became a zombie as well. This event caused an epidemic. This epidemic spreaded in wide area. So the doctor searched for a solution. And founded that zombie will die when its brain is destroyed.";
-    char s3[] = " And epimepic will disappear when eat the mixing herbal medicine, so you had to find herbs and ingredients to cooked an antidote to the plague to resolve and public support, as well as to make the country return to peace again.";
+    char s1[] = " The king of the land who needed to resurrect his dog. He told the doctor to research pills in the cellar and find herbs at the  north. People believe that herbs can help the corpse become alive again.";
+    char s2[] = " The doctor did the experiment But the result made the dog became zombie. The servant in the castle didn't beware so he was biten by the dog and    became a zombie as well. This event caused an epidemic.";
+    char s3[] = " This epidemic spreaded in wide area. So the doctor searched for a solution. And founded that zombie will die when its brain is destroyed.";
+    char s4[] = " And epimepic will disappear when eat the mixing herbal medicine, so you had to find herbs and ingredients to cooked an antidote to the     plague to resolve and public support, as well as to make the country return to peace again.";
     char c[] = ".,";
     int count=0,k,num;
 
@@ -107,6 +116,24 @@ void showstory(int a){
                     cout << " ";
                     k++;
                     }
+                }
+                if(a == 4){
+                    for(int n=0;n<74;n++){
+                    cout << s4[count];
+                    count++;
+                    k=n;
+                        if(s4[count]==c[0] || s4[count]==c[1]){
+                            cout << s4[count];
+                            count++;
+                            num++;
+                            break;  
+                        }
+                        
+                    }
+                    while(k<72){
+                    cout << " ";
+                    k++;
+                    }
                 }    
                     
             }else{
@@ -122,13 +149,22 @@ void showstory(int a){
         textcolor(15,0);
         cout << "#";
         cout << "\n" ;
+
     }
-    for(int j=0;j < 78;j++){
+    for(int j=0;j < 26;j++){
         cout << "#";
     }
-    cout << "\n";
+    textcolor(3,0); 
+    cout << "::: press to continue :::";
+    resetcolor();
+    for(int j=0;j < 27;j++){
+        cout << "#";
+    }
+    cout << "\n\n\n";
+
     
 }
+
 
 void tutorial(){
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
@@ -137,7 +173,50 @@ void tutorial(){
     cout << "               :   |   |  |   |   |  | |__|   |    /_\\  |     :              \n";
     cout << "               :   |   |__|   |   |__| |  \\ __|__ /   \\ |___  :              \n";
     resetcolor();
-    cout << "                                                                              \n";
+    cout << "\n";
+    cout << "\n";
+    cout << "\n";
+    cout << "\n";
+    cout << " ___  __  ..  .  _____  __   __  .\n";
+    cout << "|    |  | | \\ |    |   |__| |  | | \n";
+    cout << "|___ |__| |  \\|    |   |  \\ |__| |___\n";
+    cout << "-------------------------------------\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "_____ _____  ___ ..    ..\n";
+    cout << "  |     |   |___ | \\  / |\n";
+    cout << "__|__   |   |___ |  \\/  |\n";
+    cout << "-------------------------.aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
