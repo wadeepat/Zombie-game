@@ -60,43 +60,9 @@ void character(){
     cout << "\t    *******";
 
     textcolor(14,0);
-    cout << "   **";
+    cout << "   **\n";
     resetcolor();
 
-}
-
-void gun_m16(){
-    textcolor(8,0);
-    cout << "\t\t\t        **"<< "\n";
-    cout << "\t    **********************\n";
-    cout << "\t********************************\n";
-    cout << "\t********************************\n";
-    cout << "\t****  *************\n";
-    cout << "\t****  **";
-
-    textcolor(7,0);
-    cout << "**";
-
-    textcolor(8,0);
-    cout << "*     ***\n";
-    cout << "\t      ***        ***\n";
-
-    resetcolor();
-}
-
-void herb(){
-    textcolor(10,0);
-    cout << "\t *\n";
-    cout << "\t****\n";
-    cout << "\t*****\n";
-    cout << "\t  **    **\n";
-
-    textcolor(2,0);
-    cout << "\t   *  ***\n";
-    cout << "\t    **\n";
-    cout << "\t    *\n";
-
-    resetcolor();
 }
 
 void zombie(){
@@ -135,6 +101,131 @@ void zombie(){
     textcolor(5,0);
     cout << "  *****\n";
     
+
+    resetcolor();
+}
+
+void gun_m16(){
+    textcolor(8,0);
+    cout << "\t\t\t        **"<< "\n";
+    cout << "\t    **********************\n";
+    cout << "\t********************************\n";
+    cout << "\t********************************\n";
+    cout << "\t****  *************\n";
+    cout << "\t****  **";
+
+    textcolor(7,0);
+    cout << "**";
+
+    textcolor(8,0);
+    cout << "*     ***\n";
+    cout << "\t      ***        ***\n";
+
+    resetcolor();
+}
+
+void ingr_spinach(){
+    textcolor(10,0);
+    cout << "\t *\n";
+    cout << "\t****\n";
+    cout << "\t*****\n";
+    cout << "\t ***    **\n";
+
+    textcolor(2,0);
+    cout << "\t   *  ***\n";
+    cout << "\t    **\n";
+    cout << "\t    *\n";
+
+    resetcolor();
+}
+
+void ingr_chilli(){
+    textcolor(10,0);
+    cout << "\t         *\n";
+    cout << "\t         *\n";
+
+    textcolor(12,0);
+    cout << "\t        **\n";
+    cout << "\t       ***\n";
+    cout << "\t      ***\n";
+    cout << "\t     **\n";
+    cout << "\t   *\n";
+
+    resetcolor();
+}
+
+void ingr_mangosteen(){
+    textcolor(13,0);
+    cout << "\t      ***\n";
+    cout << "\t    *******\n";
+    cout << "\t    *******\n";
+    cout << "\t      ***\n";
+
+    resetcolor();
+}
+
+void ingr_serumanimal(){
+    textcolor(15,0);
+    cout << "\t      ****\n";
+    cout << "\t      ****\n";
+    cout << "\t      *";
+    
+    textcolor(14,0);
+    cout << "**";
+    textcolor(15,0);
+    cout << "*\n";
+    
+    cout << "\t      *";
+    textcolor(14,0);
+    cout << "**";
+    textcolor(15,0);
+    cout << "*\n";
+
+    cout << "\t      *";
+    textcolor(14,0);
+    cout << "**";
+    textcolor(15,0);
+    cout << "*\n";
+
+    cout << "\t      *";
+    textcolor(14,0);
+    cout << "**";
+    textcolor(15,0);
+    cout << "*\n";
+  
+    cout << "\t       **\n";
+    
+    resetcolor();
+}
+
+void safty(){
+    cout << "\t    *****\n";
+    //cout << "\t    *   *\n";
+    cout << "\t*************\n";
+    cout << "\t*    ";
+    textcolor(12,0);
+    cout << "***    ";
+    resetcolor();
+    cout << "*\n";
+
+    cout << "\t*  ";
+    textcolor(12,0);
+    cout << "*** ***  ";
+    resetcolor();
+    cout << "*\n";
+
+    cout << "\t*  ";
+    textcolor(12,0);
+    cout << "*** ***  ";
+    resetcolor();
+    cout << "*\n";
+
+    cout << "\t*    ";
+    textcolor(12,0);
+    cout << "***    ";
+    resetcolor();
+    cout << "*\n";
+    cout << "\t*************\n";
 
     resetcolor();
 }
