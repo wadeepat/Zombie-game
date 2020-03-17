@@ -1,0 +1,1 @@
+charactordata("Liw",100,"NORMAL","NORMAL",1);

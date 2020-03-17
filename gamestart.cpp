@@ -143,7 +143,7 @@ void changemap(int &locmap,int &x,int &y){
         locmap=1;
     } 
 }
-void move(char &press,int &x,int&y,int score,int locmap){
+void move(char &press,int &x,int&y,int score,int &locmap){
     if(press=='w'){
         if(map[x-1][y]=='|') changemap(locmap,x,y);
         else if(map[x-1][y]!='#'){
