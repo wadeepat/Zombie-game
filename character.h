@@ -197,3 +197,35 @@ void ingr_serumanimal(){
     
     resetcolor();
 }
+
+void safty(){
+    cout << "\t    *****\n";
+    //cout << "\t    *   *\n";
+    cout << "\t*************\n";
+    cout << "\t*    ";
+    textcolor(12,0);
+    cout << "***    ";
+    resetcolor();
+    cout << "*\n";
+
+    cout << "\t*  ";
+    textcolor(12,0);
+    cout << "*** ***  ";
+    resetcolor();
+    cout << "*\n";
+
+    cout << "\t*  ";
+    textcolor(12,0);
+    cout << "*** ***  ";
+    resetcolor();
+    cout << "*\n";
+
+    cout << "\t*    ";
+    textcolor(12,0);
+    cout << "***    ";
+    resetcolor();
+    cout << "*\n";
+    cout << "\t*************\n";
+
+    resetcolor();
+}
