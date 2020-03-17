@@ -28,9 +28,9 @@ int main(){
 }
 
 void showstory(int a){
-    char s1[] = " The king of the land who need to resurrect him a dog. He calls on the doctor research pill in the cellar and finds herbs at the north. People believe that herbs can help the body become alive again.";
-    char s2[] = " The doctor essay and have the result But a dog becomes a zombie. And the servant doesn't beware so he becomes a zombie as well. And this epidemic has grown increasingly wide area. The doctor in the castle has searched for a solution. And that Zombie is dead when the brain is destroyed.";
-    char s3[] = " And disease will disappear when mixing herbal medicine, so you had to find herbs and ingredients to cooked as an antidote to the  plague to resolve and public support, as well as to make the country can return to peace again.";
+    char s1[] = " The king of the land who needed to resurrect his dog. He told the doctor to research pills in the cellar and find herbs at the north. People believe that herbs can help the corpse become alive again.";
+    char s2[] = " The doctor did the experiment But the result made the dog became a zombie. The servant in the castle didn't beware so he was biten by the dog and became a zombie as well. This event caused an epidemic. This epidemic spreaded in wide area. So the doctor searched for a solution. And founded that zombie will die when its brain is destroyed.";
+    char s3[] = " And epimepic will disappear when eat the mixing herbal medicine, so you had to find herbs and ingredients to cooked an antidote to the plague to resolve and public support, as well as to make the country return to peace again.";
     char c[] = ".,";
     int count=0,k,num;
 
