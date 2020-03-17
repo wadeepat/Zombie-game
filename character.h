@@ -164,7 +164,7 @@ void ingr_mangosteen(){
     resetcolor();
 }
 
-void ingr_serum(){
+void ingr_serumanimal(){
     textcolor(15,0);
     cout << "\t      ****\n";
     cout << "\t      ****\n";
