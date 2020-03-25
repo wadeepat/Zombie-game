@@ -2,6 +2,7 @@
 #include<conio.h>
 #include<Windows.h>
 #include<iomanip>
+#include<ctime>
 #define textcolor(txt,back) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), back*16+txt)
 using namespace std;
 
@@ -85,30 +86,37 @@ void charactordata(string name,int hp,string gun,string armor,int item){
 }
 
 void showscore(int score){
-    cout<<setw(89)<<"------------------  \n";
-    cout<<setw(78)<<"|  Score: ";cout<<setw(5)<<setfill('0')<<score<<"  |\n";
-    cout<<setfill(' ')<<setw(87)<<"------------------\n";
+    gotoxy(68,0);cout<<"------------------";
+    gotoxy(68,1);cout<<"|  Score: ";cout<<setw(5)<<setfill('0')<<score<<"  |";
+    gotoxy(68,2);cout<<setfill(' ')<<"------------------\n";
 }
 
-void founditem(){
-
+void showtime(int runtime){
+    gotoxy(40,0);cout<<"-----------------";
+    gotoxy(40,1);cout<<"|  Time: ";cout<<setw(5)<<setfill('0')<<runtime<<"  |"<<setfill(' ');
+    gotoxy(40,2);cout<<"-----------------\n";
 }
-void drawmap(int score){
-    showscore(score);
+
+void updatetime(int runtime){
+    gotoxy(49,1);cout<<setw(5)<<setfill('0')<<runtime<<setfill(' ');
+}
+
+void drawmap(int score,int runtime){
+    showtime(runtime); showscore(score);
     for(int i=0;i<17;i++){
     cout<<"\t";
         for(int j=0;j<79;j++){
             if(map[i][j]=='@')SetConsoleTextAttribute(h,4);
             if(map[i][j]=='*')textcolor(6,0);
             cout<<map[i][j];
-            if(map[i][j]=='@' || map[i][j]=='*')SetConsoleTextAttribute(h,7);
+            if(map[i][j]=='@'||map[i][j]=='*')SetConsoleTextAttribute(h,7);
         }
       cout<<endl;      
     }
     cout<<endl;
     charactordata("Liw",100,"NORMAL","NORMAL",1);
 }
-void changemap(int &locmap,int &x,int &y){
+void changemap(int &locmap,int &x,int &y,int score,int runtime){
     if(locmap==1){
         for(int i=0;i<17;i++){
             for(int j=0;j<79;j++){
@@ -141,64 +149,95 @@ void changemap(int &locmap,int &x,int &y){
         y=76;
         map[12][76]='@';
         locmap=1;
-    } 
+    }
+    system("cls");
+    drawmap(score,runtime); 
 }
-void move(char &press,int &x,int&y,int score,int locmap){
+void move(char &press,int &x,int&y,int score,int &locmap,int runtime){
     if(press=='w'){
-        if(map[x-1][y]=='|') changemap(locmap,x,y);
+        if(map[x-1][y]=='|') changemap(locmap,x,y,score,runtime);
         else if(map[x-1][y]!='#'){
             map[x][y]=' ';
+            gotoxy(8+y,3+x);
+            cout<<' ';
             x=x-1;
-            map[x][y]='@';
+            gotoxy(8+y,3+x);
+            textcolor(4,0);cout<<'@';textcolor(7,0);
         }
     }
     else if(press=='a'){
-        if(map[x][y-1]=='|') changemap(locmap,x,y);
+        if(map[x][y-1]=='|') changemap(locmap,x,y,score,runtime);
         else if(map[x][y-1]!='#'){
             map[x][y]=' ';
+            gotoxy(8+y,3+x);
+            cout<<' ';
             y=y-1;
-            map[x][y]='@';
+            gotoxy(8+y,3+x);
+            textcolor(4,0);cout<<'@';textcolor(7,0);
         }
     }
     else if(press=='s'){
-        if(map[x+1][y]=='|') changemap(locmap,x,y);
+        if(map[x+1][y]=='|') changemap(locmap,x,y,score,runtime);
         else if(map[x+1][y]!='#'){
             map[x][y]=' ';
+            gotoxy(8+y,3+x);
+            cout<<' ';
             x=x+1;
-            map[x][y]='@';
+            gotoxy(8+y,3+x);
+            textcolor(4,0);cout<<'@';textcolor(7,0);
         }
     }
     else if(press=='d'){
-        if(map[x][y+1]=='|') changemap(locmap,x,y);
+        if(map[x][y+1]=='|') changemap(locmap,x,y,score,runtime);
         else if(map[x][y+1]!='#'){
             map[x][y]=' ';
+            gotoxy(8+y,3+x);
+            cout<<' ';
             y=y+1;
-            map[x][y]='@';
+            gotoxy(8+y,3+x);
+            textcolor(4,0);cout<<'@';textcolor(7,0);
         }
     }
     press=' ';
-    system("cls");
-    drawmap(score);
 }
 
-
-
-bool gamerunning=true;
-
-int main(){
+void gamestart(){
     system("cls");
+    bool gamerunning=true;
+    time_t start,stop;
+    time(&start);
+    int runtime=0;
     int x=1;
     int y=1;
     int score=0;
     int locmap=1;
     char key,press;
-    drawmap(score);
+    drawmap(score,runtime);
     
     while(gamerunning){
-        key=getch();
-        press=key;
-        if(press=='w'|| press=='a'|| press=='s'|| press=='d')move(press,x,y,score,locmap);
-        if(key=='f')gamerunning=false;  
+        time(&stop);
+        runtime=stop-start;
+        if(runtime==30)break;
+        showtime(runtime); showscore(score);
+        if(GetAsyncKeyState(0x57)){
+            press='w';
+            move(press,x,y,score,locmap,runtime);
+        }
+        else if(GetAsyncKeyState(0x41)){
+            press='a';
+            move(press,x,y,score,locmap,runtime);
+        }
+        else if(GetAsyncKeyState(0x53)){
+            press='s';
+            move(press,x,y,score,locmap,runtime);
+        }
+        else if(GetAsyncKeyState(0x44)){
+            press='d';
+            move(press,x,y,score,locmap,runtime);
+        }
+    
+        if(GetAsyncKeyState(0x46))gamerunning=false;
+        Sleep(80);  
     }
 }
 
