@@ -20,18 +20,17 @@ Unit hero,zom;
 		hero.showStatus();
 		drawScene(player_action,p,zombie_action,m);
 		zom.showStatus();		
-		cout << "[A] Attack [H] Heal [G] Guard [E] Exit";
+		cout << "[A] Attack [E] Exit";
 		cout << "\n[Turn " << turn_count << "] Enter your action: ";
 		cin >> player_action;
 		player_action = toupper(player_action);
 		if(player_action == 'E') break; 
 		
-		int temp = rand()%3;
-		if(temp <= 1) zombie_action = 'A';
-		else if(temp == 2) zombie_action = 'G';
+		zombie_action = 'A';
+	
 		
 		//if(player_action == 'G') hero.guard();
-		//if(zombie_action == 'G') zom.guard();
+		//if(zombie_action == 'G') zom.guard();S
 		
 		//if(player_action == 'H') p = hero.heal();
 		
@@ -57,6 +56,7 @@ Unit hero,zom;
 
 int main(){
 	ZombieZone();
+	
 	return 0;
 }
 
