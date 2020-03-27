@@ -23,6 +23,19 @@ void frame(){
     gotoxy(34,13);                      cout<<"|                           |";
     gotoxy(34,14);                      cout<<"-----------------------------";
 }
+void frame2(){
+    gotoxy(34,5);                       cout<<"-----------------------------";
+    gotoxy(34,6);                       cout<<"|                           |";
+    gotoxy(34,7);                       cout<<"|                           |";
+    gotoxy(34,8);                       cout<<"|                           |";
+    gotoxy(34,9);                       cout<<"|                           |";
+    gotoxy(34,10);                      cout<<"|     Zombie  is here!      |";
+    gotoxy(34,11);                      cout<<"|                           |";
+    gotoxy(34,12);                      cout<<"|                           |";
+    gotoxy(34,13);                      cout<<"|                           |";
+    gotoxy(34,14);                      cout<<"|                           |";
+    gotoxy(34,15);                      cout<<"-----------------------------";
+}
 void spinach(){
     textcolor(10,0);gotoxy(35,6);       cout<<"          *                ";
     gotoxy(35,7);                       cout<<"         ****              ";

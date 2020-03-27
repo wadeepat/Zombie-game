@@ -84,7 +84,8 @@ void founditem(vector<string> &item);
 void move(char &press,int &x,int&y,int score,int &locmap,int runtime,vector<string>&);
 vector<string> createitem();
 
-int main(){
+void gamestart(){
+    
     system("cls");
     bool gamerunning=true;
     time_t start,stop;
@@ -101,9 +102,11 @@ int main(){
     while(gamerunning){
         time(&stop);
         runtime=stop-start;
-        if(runtime==60)break;
+        if(runtime==120)break;
         if(runtime%20==0 && runtime!=0){    //zombie
             if(rand()%3==0){
+                frame2();
+                Sleep(1000);
                 system("cls");ZombieZone(name);system("cls");drawmap(score,runtime);
             }
         }
