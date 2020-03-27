@@ -19,7 +19,7 @@ class Unit{
 		int def;
 		bool guard_on;		
 	public:			
-		void create(string);
+		void create(string,string);
 		void showStatus();
 		void newTurn();
 		int attack(Unit &);
@@ -29,11 +29,10 @@ class Unit{
 		bool isDead();	
 };
 
-void Unit::create(string t){ 
+void Unit::create(string t,string namefrom){ 
 	if(t == "Hero"){
 		type = "Hero";
-		cout << "Please input your name: ";
-		getline(cin,name);
+		name=namefrom;
 		hpmax = 100;   
 		atk1 = 10;     
         atk2 = 20;
@@ -153,7 +152,7 @@ void drawScene(char p_action,int p,char m_action,int m){
     textcolor(4,0);cout << setw(10) << "\t    **";textcolor(1,0);cout << "***";textcolor(4,0);cout <<"**";textcolor(14,0);cout << "    **"; 
 	cout << "\t";textcolor(2,0);cout << "\t*  *******"; textcolor(8,0);cout << "*\n";  
     textcolor(4,0);cout << setw(10) << "\t    *******";textcolor(14,0);cout << "   **"; 
-	cout << "\t"; textcolor(2,0);cout << "\t  * "; textcolor(8,0);cout << "  *****\n"; 
+	cout << "\t"; textcolor(2,0);cout << "\t  * "; textcolor(8,0);cout << "  *****\n"; textcolor(7,0);
 };
 
 
@@ -163,7 +162,7 @@ void playerWin(){
 	cout << "*                                                                            *\n";
 	cout << "*                               YOU WIN!!!                                   *\n";
 	cout << "*                                                                            *\n";
-	cout << "******************************************************************************\n";
+	cout << "******************************************************************************\n";textcolor(7,0);
 };
 
 
@@ -171,9 +170,9 @@ void playerLose(){
 	textcolor(6,0);
 	cout << "******************************************************************************\n";
 	cout << "*                                                                            *\n";
-	cout << "*                               YOU LOSE!!!                                   *\n";
+	cout << "*                               YOU LOSE!!!                                  *\n";
 	cout << "*                                                                            *\n";
-	cout << "******************************************************************************\n";
+	cout << "******************************************************************************\n";textcolor(7,0);
 };
 
 
