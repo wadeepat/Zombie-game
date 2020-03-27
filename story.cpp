@@ -32,7 +32,6 @@ int main(){
     
     
 
-
 }
 
 void showstory(int a){
@@ -191,7 +190,7 @@ void tutorial(){
     cout << "_____ _____  ___ ..    ..\n";
     cout << "  |     |   |___ | \\  / |\n";
     cout << "__|__   |   |___ |  \\/  |\n";
-    cout << "-------------------------.aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "-------------------------\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
@@ -199,19 +198,71 @@ void tutorial(){
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    textcolor(10,0);
+    cout << "\t *\n";
+    cout << "\t****\n";
+    cout << "\t*****\n";
+    cout << "\t ***    **\n";
+
+    textcolor(2,0);
+    cout << "\t   *  ***\n";
+    cout << "\t    **\n";
+    cout << "\t    *\n";
+
+    resetcolor();
+
+    textcolor(10,0);
+    cout << "\t         *\n";
+    cout << "\t         *\n";
+
+    textcolor(12,0);
+    cout << "\t        **\n";
+    cout << "\t       ***\n";
+    cout << "\t      ***\n";
+    cout << "\t     **\n";
+    cout << "\t   *\n";
+
+    resetcolor();
+
+    textcolor(13,0);
+    cout << "\t      ***\n";
+    cout << "\t    *******\n";
+    cout << "\t    *******\n";
+    cout << "\t      ***\n";
+
+    resetcolor();
+
+    textcolor(15,0);
+    cout << "\t      ****\n";
+    cout << "\t      ****\n";
+    cout << "\t      *";
+    
+    textcolor(14,0);
+    cout << "**";
+    textcolor(15,0);
+    cout << "*\n";
+    
+    cout << "\t      *";
+    textcolor(14,0);
+    cout << "**";
+    textcolor(15,0);
+    cout << "*\n";
+
+    cout << "\t      *";
+    textcolor(14,0);
+    cout << "**";
+    textcolor(15,0);
+    cout << "*\n";
+
+    cout << "\t      *";
+    textcolor(14,0);
+    cout << "**";
+    textcolor(15,0);
+    cout << "*\n";
+  
+    cout << "\t       **\n";
+    
+    resetcolor();
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
