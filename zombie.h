@@ -3,6 +3,8 @@
 #include<ctime>
 #include<cstdlib>
 #include<iomanip>
+#define textcolor(txt,back) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), back*16+txt)
+#define resetcolor() SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15)
 
 using namespace std;
 
@@ -17,26 +19,25 @@ class Unit{
 		int def;
 		bool guard_on;		
 	public:			
-		void create(string);
+		void create(string,string);
 		void showStatus();
 		void newTurn();
 		int attack(Unit &);
 		int beAttacked(int);
 		//int heal();	
-		//void guard();
+		void guard();
 		bool isDead();	
 };
 
-void Unit::create(string t){ 
+void Unit::create(string t,string namefrom){ 
 	if(t == "Hero"){
 		type = "Hero";
-		cout << "Please input your name: ";
-		getline(cin,name);
+		name=namefrom;
 		hpmax = 100;   
 		atk1 = 10;     
         atk2 = 20;
         atk3 = 30;
-		def = 10;
+		def = 0;
 	}else if(t == "Zombie"){
 		type = "Zombie";
 		name = "Zombie";
@@ -63,6 +64,7 @@ void Unit::create(string t){
 }*/
 
 void Unit::showStatus(){
+	textcolor(7,0);
 	if(type == "Hero"){
 		cout << "-----------------------------------------------------------------------------\n"; 
 		cout << name << "\n"; 
@@ -115,55 +117,62 @@ bool Unit::isDead(){
 void drawScene(char p_action,int p,char m_action,int m){
 	cout << "                                                       \n";
 	if(p_action == 'A'){
-	cout << "                                       "<< -p <<"\n";
-	}else{
-	cout << "                                                       \n";	
-	}	
-	cout << "                                *               *      \n";
-	cout << "                                **  *********  **      \n";
-	cout << "                                ****         ****      \n";
+		cout << setw(17) << -m ;
+	}
+	
 	if(m_action == 'A'){
-	cout << "                 " << setw(5) << -m << "           *** **   ** ***       Attack!\n";
-	}else if(m_action == 'G'){
-	cout << "                                 *** **   ** ***       Guard!\n";
-	}else{
-	cout << "                                 *** **   ** ***       \n";	
+		cout   <<"\t\t        \t" << -p ;
 	}
-	cout << "                                  ** **   ** **        \n";
-	cout << "                   ***             *         *         \n";
+
+	cout << setw(10) << "\t\t\t\t\t\t\n";
+	
+	cout << endl;
+	textcolor(4,0);cout << setw(10) << "\t     *****"; textcolor(14,0);cout << "         *"; 
+	cout << "\t"; textcolor(2,0);cout << "\t     *****\n";
+    textcolor(4,0);cout << setw(10) << "\t    *******"; textcolor(14,0);cout << "       **"; 
+	cout << "\t"; textcolor(2,0);cout << "\t    *"; textcolor(7,0);cout << "* *";textcolor(2,0);cout << "***\n";
+    textcolor(4,0);cout << setw(10) << "\t    **"; textcolor(1,0);cout << "* *"; textcolor(4,0);cout << "**";textcolor(14,0);cout << "      ***"; 
+	cout << "\t"; textcolor(2,0);cout << "\t    *"; textcolor(7,0);cout << "****";  textcolor(2,0);cout << "**\n"; 
+	if(m_action == 'A'){
+		textcolor(4,0);cout << setw(10) << "\t     *****"; textcolor(14,0);cout << "      ***"; 
+		cout << "\t"; textcolor(7,0);cout << "\t      ****"; textcolor(2,0);cout << "*    Attack!\n"; 
+	}else {
+		textcolor(4,0);cout << setw(10) << "\t     *****"; textcolor(14,0);cout << "      ***"; 
+		cout << "\t"; textcolor(7,0);cout << "\t      ****"; textcolor(2,0);cout << "*    \n"; 
+	}
 	if(p_action == 'A'){
-	cout << "        Attack!    ***  *           *********          \n";		
-	}else if(p_action == 'H'){
-	cout << "      Heal! +" << setw(2) << p << "    ***  *           *********          \n";
-	}else if(p_action == 'G'){
-	cout << "         Guard!    ***  *           *********          \n";
-	}else{
-	cout << "                   ***  *           *********          \n";	
+		textcolor(4,0);cout << setw(3) << "Attack!" << "\t    **";textcolor(1,0);cout << "***";textcolor(4,0);cout <<"**";textcolor(14,0);cout << "   ******"; 
+		cout << "\t"; textcolor(2,0);cout << "\t *****"; textcolor(8,0);cout << "*****\n";
+	}else {
+		textcolor(4,0);cout << setw(10) << "\t    **";textcolor(1,0);cout << "***";textcolor(4,0);cout <<"**";textcolor(14,0);cout << "   ******"; 
+		cout << "\t"; textcolor(2,0);cout << "\t *****"; textcolor(8,0);cout << "*****\n";
 	}
-	cout << "                    *  *       ***  *  *  *            \n";
-	cout << "                  *****           **   *   *           \n";
-	cout << "                    *                  *    ***        \n";
-	cout << "                   * *               **        *       \n";
-	cout << "                  *   *                                \n";
-	cout << "                                                       \n";
+	textcolor(4,0);cout << setw(10) << "\t    **";textcolor(1,0);cout << "***";textcolor(4,0);cout <<"**";textcolor(14,0);cout << "   ******"; 
+	cout << "\t"; textcolor(2,0);cout << "\t *****"; textcolor(8,0);cout << "*****\n"; 
+    textcolor(4,0);cout << setw(10) << "\t    **";textcolor(1,0);cout << "***";textcolor(4,0);cout <<"**";textcolor(14,0);cout << "    **"; 
+	cout << "\t";textcolor(2,0);cout << "\t*  *******"; textcolor(8,0);cout << "*\n";  
+    textcolor(4,0);cout << setw(10) << "\t    *******";textcolor(14,0);cout << "   **"; 
+	cout << "\t"; textcolor(2,0);cout << "\t  * "; textcolor(8,0);cout << "  *****\n"; textcolor(7,0);
 };
 
 
-void playerWin(){	
-	cout << "*******************************************************\n";
-	for(int i = 0; i < 3; i++) cout << "*                                                     *\n";
-	cout << "*                   YOU WIN!!!                        *\n";
-	for(int i = 0; i < 3; i++) cout << "*                                                     *\n";
-	cout << "*******************************************************\n";
+void playerWin(){
+	textcolor(4,0);	
+	cout << "******************************************************************************\n";
+	cout << "*                                                                            *\n";
+	cout << "*                               YOU WIN!!!                                   *\n";
+	cout << "*                                                                            *\n";
+	cout << "******************************************************************************\n";textcolor(7,0);
 };
 
 
 void playerLose(){
-	cout << "*******************************************************\n";
-	cout << "*                                                     *\n";
-	cout << "*                   YOU LOSE!!!                       *\n";
-	cout << "*                                                     *\n";
-	cout << "*******************************************************\n";
+	textcolor(6,0);
+	cout << "******************************************************************************\n";
+	cout << "*                                                                            *\n";
+	cout << "*                               YOU LOSE!!!                                  *\n";
+	cout << "*                                                                            *\n";
+	cout << "******************************************************************************\n";textcolor(7,0);
 };
 
 

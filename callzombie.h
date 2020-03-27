@@ -7,10 +7,10 @@
 using namespace std;
 
 
-void ZombieZone(){
+void ZombieZone(string name){
 Unit hero,zom;
-	hero.create("Hero");
-	zom.create("Zombie");	
+	hero.create("Hero",name);
+	zom.create("Zombie",name);	
 	int turn_count = 1;
 	char player_action = '\0',zombie_action = '\0';
 	int p = 0, m = 0;
@@ -22,6 +22,7 @@ Unit hero,zom;
 		zom.showStatus();		
 		cout << "[A] Attack [E] Exit";
 		cout << "\n[Turn " << turn_count << "] Enter your action: ";
+		cin.ignore();
 		cin >> player_action;
 		player_action = toupper(player_action);
 		if(player_action == 'E') break; 
@@ -51,12 +52,5 @@ Unit hero,zom;
 		
 		turn_count++;
 	}	
-}
-
-
-int main(){
-	ZombieZone();
-	
-	return 0;
 }
 
