@@ -8,7 +8,9 @@
 #include<time.h>		
 #include"MMSystem.h"
 #include<fstream>
+#include<string>
 using namespace std;
+
 class playgame{
 	public:
 	void create_account();
@@ -26,7 +28,7 @@ void effect(int x, int y){
     coord.Y = y; 
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
-void frame(){
+void frame0(){
 	int i,j=79;
 	for(i = 0;i<80,j>=0;i++,j--)
 	{
@@ -116,7 +118,7 @@ void playgame:: main_menu(){
 	}
 	Sleep(2000);
 	system("cls");
-	frame();
+	frame0();
 	effect(25,10);
     cout << "Press [Enter] to start";
     cin.get();
@@ -134,17 +136,12 @@ void playgame::create_account(){
 		cout<<"|";
 	}
 	effect(7,2);
-	string nameplayer;
     cout << "Enter your name : ";
+	string nameplayer;
     getline(cin,nameplayer);
-	ifstream f("player.txt");
     ofstream player;
-    string text;
-    player.open("D:\\Zombie-game\\player.txt",ios::app);
-	while(getline(f,text)){
-        player << text << "\n" ;
-    }
-    player << nameplayer << "\n";
+    player.open("player.txt",ios::app);
+	player<<nameplayer<< "\n" ;
     player.close();
 	effect(35,13);
 	cout<<" SUBMIT";
@@ -160,8 +157,8 @@ void playgame::create_account(){
 	cout<<".";
 	Sleep(400);	
 }
-int main(){
-    namegame();
-    playgame r;
-    r.main_menu();
-}
+// void opengame(){
+//     namegame();
+//     playgame r;
+//     r.main_menu();
+// }
