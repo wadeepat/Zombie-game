@@ -19,21 +19,25 @@ class Unit{
 		int def;
 		bool guard_on;		
 	public:			
-		void create(string,string);
+		void create(string,string,int);
 		void showStatus();
 		void newTurn();
 		int attack(Unit &);
 		int beAttacked(int);
 		//int heal();	
 		void guard();
-		bool isDead();	
+		bool isDead();
+		int gethp();	
 };
-
-void Unit::create(string t,string namefrom){ 
+int Unit::gethp(){
+	return hp;
+}
+void Unit::create(string t,string namefrom,int hpfrom){ 
 	if(t == "Hero"){
 		type = "Hero";
 		name=namefrom;
-		hpmax = 100;   
+		hpmax = 100;
+		hp=hpfrom;   
 		atk1 = 10;     
         atk2 = 20;
         atk3 = 30;
@@ -41,10 +45,11 @@ void Unit::create(string t,string namefrom){
 	}else if(t == "Zombie"){
 		type = "Zombie";
 		name = "Zombie";
-		hpmax = 30;   
+		hpmax = 30;
+		hp=30;   
 		atk1 = 5;     
 	}
-	hp = hpmax;
+	
 	guard_on = false;
 }
 
