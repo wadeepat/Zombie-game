@@ -17,11 +17,14 @@ void ClearConsoleInputBuffer()
 
 void ZombieZone(string name,int &hp){
 Unit hero,zom;
-	hero.create("Hero",name,hp);
-	zom.create("Zombie",name,30);	
+	int ra = (rand()%2+1);
+	hero.create("Hero",name,hp,ra);
+	zom.create("Zombie",name,30,ra);	
 	int turn_count = 1;
 	char player_action = '\0',zombie_action = '\0';
 	int p = 0, m = 0;
+	int atkz1 = 5;
+	int atkz2 = 10;
 	while(true){
 		zom.newTurn();	
 		hero.newTurn();			
@@ -36,15 +39,18 @@ Unit hero,zom;
 		player_action = toupper(player_action);
 		if(player_action == 'E') break; 
 		zombie_action = 'A';
-	
 		
-		//if(player_action == 'G') hero.guard();
-		//if(zombie_action == 'G') zom.guard();S
 		
-		//if(player_action == 'H') p = hero.heal();
+		if(player_action == 'A') p = hero.attack(zom,10); 
+		if(zombie_action == 'A'){
+			if(ra == 1){
+				m = zom.attack(hero,atkz1);
+			}else if(ra == 2){
+				m = zom.attack(hero,atkz2);
+			}
+		}
 		
-		if(player_action == 'A') p = hero.attack(zom); 
-		if(zombie_action == 'A') m = zom.attack(hero);
+		
 		hp=hero.gethp();
 		if(hero.isDead()){
 			drawScene(player_action,p,zombie_action,m);

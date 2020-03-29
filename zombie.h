@@ -19,20 +19,18 @@ class Unit{
 		int def;
 		bool guard_on;		
 	public:			
-		void create(string,string,int);
+		void create(string,string,int,int);
 		void showStatus();
 		void newTurn();
-		int attack(Unit &);
-		int beAttacked(int);
-		//int heal();	
-		void guard();
+		int attack(Unit &,int);
+		int beAttacked(int);	
 		bool isDead();
 		int gethp();	
 };
 int Unit::gethp(){
 	return hp;
 }
-void Unit::create(string t,string namefrom,int hpfrom){ 
+void Unit::create(string t,string namefrom,int hpfrom,int r){ 
 	if(t == "Hero"){
 		type = "Hero";
 		name=namefrom;
@@ -46,27 +44,14 @@ void Unit::create(string t,string namefrom,int hpfrom){
 		type = "Zombie";
 		name = "Zombie";
 		hpmax = 30;
-		hp=30;   
-		atk1 = 5;     
+		hp=30;
+		if(r==1) atk1 = 5;
+		else if(r==2) atk1 = 10;
 	}
 	
 	guard_on = false;
 }
 
-/*void Unit::showStatus(){
-	if(type == "Hero"){
-		cout << "---------------------------------------\n"; 
-		cout << name << "\n"; 
-		cout << "HP: " << hp << "/" << hpmax << "\tATK: "<< atk1 << "\t\tDEF: "<< def;		
-		cout << "\n---------------------------------------\n";
-	}	
-	else if(type == "Zombie"){
-		cout << "\t\t\t\t---------------------------------------\n"; 
-		cout << "\t\t\t\tZombie" << "\n"; 
-		cout << "\t\t\t\tHP: " << hp << "\t\tATK: "<< atk1 << "\t\tDEF: "<< def;
-		cout << "\n\t\t\t\t---------------------------------------\n";
-	}
-}*/
 
 void Unit::showStatus(){
 	textcolor(7,0);
@@ -89,35 +74,22 @@ void Unit::newTurn(){
 	guard_on = false;
 }
 
-int Unit::attack(Unit & target){
-	target.beAttacked(atk1);
+int Unit::attack(Unit & target,int atkz){
+	target.beAttacked(atkz);
 }
 
 int Unit::beAttacked(int oppatk){
 	int dmg = oppatk-def;
-	//if(guard_on) dmg = dmg/3;
 	if(dmg < 0) dmg = 0;
 	hp = hp-dmg;
 	if(hp <= 0 ) cout << ">>" << name << " was defeated. \n";
 	return dmg;
 }
 
-/*int Unit::heal(){
-	int heal = rand()%21+10;
-	if(hp+heal > hpmax) heal = hpmax - hp;
-	hp += heal;
-	return heal;
-}*/
-
-/*void Unit::guard(){
-	guard_on = true;
-}*/
-
 bool Unit::isDead(){
 	if(hp <= 0) return true;
 	else return false;
 }
-
 
 void drawScene(char p_action,int p,char m_action,int m){
 	cout << "                                                       \n";
