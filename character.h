@@ -229,3 +229,23 @@ void safty(){
 
     resetcolor();
 }
+
+void bomb(){
+    textcolor(14,0);
+    cout << "\t         *\n";
+    textcolor(4,0);
+    cout << "\t        *\n";
+    cout << "\t      ***\n";
+    cout << "\t    **";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "*";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "**\n";
+    cout << "\t    **";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "*";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "**\n";
+    cout << "\t      ***\n";
+    resetcolor();
+}
