@@ -63,7 +63,7 @@ void mangosteen(){
     gotoxy(35,10);                      cout<<"         *******          ";
     gotoxy(35,11);                      cout<<"           ***            ";
     gotoxy(35,12);                      cout<<"                          ";
-    gotoxy(35,13);textcolor(6,0);       cout<<"    You found a chilli.   "; textcolor(7,0);
+    gotoxy(35,13);textcolor(6,0);       cout<<"    You found a mangosteen.   "; textcolor(7,0);
 }
 
 void serumanimal(){
@@ -86,17 +86,16 @@ void firstAid(){
     gotoxy(35,11);                      cout<<"       *    ";textcolor(12,0);cout << "***    ";textcolor(7,0);cout << "*";
     gotoxy(35,12);                      cout<<"       *************";
     gotoxy(35,13);textcolor(6,0);       cout<<"   You found a first aid.  "; textcolor(7,0);
-    
-
-    
-
-    
-    
-    
-
-    
-    
 }
 
+void bomb(){
+    textcolor(14,0);gotoxy(35,7);       cout<<"         *";               
+    gotoxy(35,8);textcolor(4,0);        cout<<"        *";                
+    gotoxy(35,9);                       cout<<"      ***"; 
+    gotoxy(35,10);                      cout<<"    **";textcolor(8,0);cout << "*";textcolor(4,0);cout << "*";textcolor(8,0);cout << "*";textcolor(4,0);cout << "**\n";  
+    gotoxy(35,11);                      cout<<"    **";textcolor(8,0);cout << "*";textcolor(4,0);cout << "*";textcolor(8,0);cout << "*";textcolor(4,0);cout << "**\n";
+    gotoxy(35,12);                      cout<<"      ***";  
+    gotoxy(35,13);textcolor(6,0);       cout<<" You found a bomb. "; textcolor(7,0);                                                                                            
+}
     
     
