@@ -15,10 +15,10 @@ void ClearConsoleInputBuffer()
         delete[] ClearingVar1;
     }
 
-void ZombieZone(string name,int &hp){
+void ZombieZone(string name,int &hp,int atk,int &check){
 Unit hero,zom;
 	int ra = (rand()%2+1);
-	hero.create("Hero",name,hp,ra);
+	hero.create("Hero",name,hp,atk);
 	zom.create("Zombie",name,30,ra);	
 	int turn_count = 1;
 	char player_action = '\0',zombie_action = '\0';
@@ -51,7 +51,7 @@ Unit hero,zom;
 		}
 		
 		
-		hp=hero.gethp();
+		if(hero.gethp()>0)hp=hero.gethp(); else hp=0;
 		if(hero.isDead()){
 			drawScene(player_action,p,zombie_action,m);
 			playerLose();
@@ -61,6 +61,7 @@ Unit hero,zom;
 		if(zom.isDead()){
 			drawScene(player_action,p,zombie_action,m);
 			playerWin();
+			check=1;
 			break; 
 		}
 		
