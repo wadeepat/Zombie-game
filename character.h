@@ -124,6 +124,25 @@ void gun_m16(){
     resetcolor();
 }
 
+void bazooka(){
+    textcolor(8,0);
+    cout << "\t                        **\n";
+    cout << "\t**                      **     \n";
+    cout << "\t***********************************\n";
+    cout << "\t***********************************\n";
+    cout << "\t**       ******************      **\n";
+    cout << "\t         **";
+
+    textcolor(7,0);
+    cout << "**";
+
+    textcolor(8,0);
+    cout << "*         ***\n";
+    cout << "\t         ***          ***\n";
+
+    resetcolor();
+}
+
 void ingr_spinach(){
     textcolor(10,0);
     cout << "\t *\n";
@@ -227,5 +246,25 @@ void safty(){
     cout << "*\n";
     cout << "\t*************\n";
 
+    resetcolor();
+}
+
+void bomb(){
+    textcolor(14,0);
+    cout << "\t         *\n";
+    textcolor(4,0);
+    cout << "\t        *\n";
+    cout << "\t      ***\n";
+    cout << "\t    **";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "*";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "**\n";
+    cout << "\t    **";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "*";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "**\n";
+    cout << "\t      ***\n";
     resetcolor();
 }
