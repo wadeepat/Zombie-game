@@ -36,7 +36,7 @@ void Unit::create(string t,string namefrom,int hpfrom,int r){
 		name=namefrom;
 		hpmax = 100;
 		hp=hpfrom;   
-		atk1 = 10;     
+		atk1 = r;     
         atk2 = 20;
         atk3 = 30;
 		def = 0;
