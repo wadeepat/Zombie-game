@@ -6,7 +6,6 @@
 #define resetcolor() SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15)
 using namespace std;
 
-using namespace std;
 
 void showstory(int );
 void tutorial();
@@ -27,8 +26,78 @@ int main(){
     i = 4;
     if(getch())showstory(i);
     if(getch())tutorial();
-    while (1) if(getch()) break;
+    if(getch()){
+        for(int i=0;i<100;i++){
+            gotoxy(0,i);
+            cout << "                                                                                ";
+        }
+        textcolor(5,0);
+        gotoxy(0,0);
+        cout << "\n\n\n\n\n\n\n\n\n";
+        cout << "..............................................................................\n";
+        Sleep(100);
+        cout << "..............................................................................\n";
+        Sleep(100);
+        cout << "..........................   FIGHT FOR THE KINGDOM  ..........................\n";
+        Sleep(100);
+        cout << "..............................................................................\n";
+        Sleep(100);
+        cout << "..............................................................................\n";
+        Sleep(5000);
+        for(int i=0;i<30;i++){
+            gotoxy(0,i);
+            cout << "                                                                                ";
+        }
+        textcolor(14,0);
+        gotoxy(0,0);
+        Sleep(100);
+        cout << "\n\n   ****      ****     ***** \n";
+        Sleep(100);
+        cout << " **        **    **   **   ** \n";
+        Sleep(100);
+        cout << "**   ***  **      **  **    ** \n";
+        Sleep(100);
+        cout << " **   **   **    **   **   ** \n";
+        Sleep(100);
+        cout << "   ****      ****     ***** \n";
+        Sleep(100);
+        cout << "\n";
+        Sleep(100);
+        cout << "*****    **       *******    *****      *****\n";
+        Sleep(100);
+        cout << "**   **  **       **       **         **      \n";
+        Sleep(100);
+        cout << "*****    **       *******    *****      ***** \n";
+        Sleep(100);
+        cout << "**   **  **       **              **         ** \n";
+        Sleep(100);
+        cout << "*****    *******  *******    *****      ***** \n";
+        Sleep(100);
+        cout << " \n";
+        Sleep(100);
+        cout << "**    **     ****     **      ** \n";
+        Sleep(100);
+        cout << "**    **   **    **   **      ** \n";
+        Sleep(100);
+        cout << " **  **   **      **  **      ** \n";
+        Sleep(100);
+        cout << "   **      **    **    **    ** \n";
+        Sleep(100);
+        cout << "   **        ****        **** \n\n\n";
+        Sleep(1000);
+        resetcolor();
+        cout << "                                                      Londing";
+        Sleep(1000);
+        cout << ".";
+        Sleep(2000);
+        cout << ".";
+        Sleep(2000);
+        cout << ".";
+        Sleep(1000);
+        
     
+    }
+
     
     
 
@@ -43,7 +112,6 @@ void showstory(int a){
     int count=0,k,num;
 
     for(int j=0;j < 78;j++){
-        Sleep(20);
         cout << "#";
     }
     cout << "\n" ;
@@ -158,14 +226,12 @@ void showstory(int a){
 
     }
     for(int j=0;j < 26;j++){
-        Sleep(20);
         cout << "#";
     }
     textcolor(3,0); 
     cout << "::: press to continue :::";
     resetcolor();
     for(int j=0;j < 27;j++){
-        Sleep(20);
         cout << "#";
     }
     cout << "\n\n\n";
@@ -176,13 +242,17 @@ void showstory(int a){
 
 void tutorial(){
     cout << "\n";
+    Sleep(100);
     textcolor(3,0); 
+    cout << "               ................................................              \n";
     Sleep(100);
     cout << "               : _____ .  . _____  __   __  _____   _   .     :              \n";
     Sleep(100);
     cout << "               :   |   |  |   |   |  | |__|   |    /_\\  |     :              \n";
     Sleep(100);
     cout << "               :   |   |__|   |   |__| |  \\ __|__ /   \\ |___  :              \n";
+    Sleep(100);
+    cout << "               ................................................              \n";
     Sleep(100);
     resetcolor();
     Sleep(100);
@@ -201,103 +271,283 @@ void tutorial(){
     cout << "|___ |__| |  \\|    |   |  \\ |__| |___\n";
     Sleep(100);
     cout << "-------------------------------------\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "_____ _____  ___ ..    ..\n";
-    cout << "  |     |   |___ | \\  / |\n";
-    cout << "__|__   |   |___ |  \\/  |\n";
-    cout << "-------------------------\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    Sleep(100);
+    cout << "-------------------------------------\n";
+    Sleep(100);
+    textcolor(12,0);
+    cout << "\n";
+    Sleep(100);
+    cout << "               \\    /\n";
+    Sleep(100);
+    cout << "       ..press  \\/\\/ go up..\n\n";
+    textcolor(14,0);
+    cout << "                       /_\\\n";
+    Sleep(100);
+    cout << "              ..press /   \\ go left..\n\n";
+    Sleep(100);
+    textcolor(11,0);
+    cout << "                              __\n";
+    Sleep(100);
+    cout << "                             |__\n";
+    Sleep(100);
+    cout << "                     ..press  __| go down..\n\n";
     textcolor(10,0);
+    Sleep(100);
+    cout << "                                     _\n";
+    Sleep(100);
+    cout << "                                    | \\\n";
+    Sleep(100);
+    cout << "                            ..press |_/ go right..\n\n\n\n";
+    resetcolor();
+    Sleep(1000);
+
+    cout << "_____ _____  ___ ..    ..\n";
+    Sleep(100);
+    cout << "  |     |   |___ | \\  / |\n";
+    Sleep(100);
+    cout << "__|__   |   |___ |  \\/  |\n";
+    Sleep(100);
+    cout << "-------------------------\n";
+    Sleep(100);
+    cout << "-------------------------\n";
+    
+    cout << "\n\n\n\n";
+    Sleep(100);
+    cout << "                                ..FIND HERDS..\n";
+    textcolor(10,0);
+    Sleep(100);
     cout << "\t\t *\n";
+    Sleep(100);
     cout << "\t\t****\n";
+    Sleep(100);
     cout << "\t\t*****\n";
-    cout << "\t\t ***    **\tspinach\n";
+    Sleep(100);
+    cout << "\t\t ***    **\tSPINACH   +1000 point\n";
 
     textcolor(2,0);
+    Sleep(100);
     cout << "\t\t   *  ***\n";
+    Sleep(100);
     cout << "\t\t    **\n";
+    Sleep(100);
     cout << "\t\t    *\n\n\n";
 
     resetcolor();
 
     textcolor(10,0);
+    Sleep(100);
     cout << "\t\t         *\n";
+    Sleep(100);
     cout << "\t\t         *\n";
 
     textcolor(12,0);
+    Sleep(100);
     cout << "\t\t        **\n";
-    cout << "\t\t       ***\tchilli\n";
+    Sleep(100);
+    cout << "\t\t       ***\tCHILLI   +1000 point\n";
+    Sleep(100);
     cout << "\t\t      ***\n";
+    Sleep(100);
     cout << "\t\t     **\n";
+    Sleep(100);
     cout << "\t\t   *\n\n\n";
 
     resetcolor();
 
     textcolor(13,0);
+    Sleep(100);
     cout << "\t\t      ***\n";
+    Sleep(100);
     cout << "\t\t    *******\n";
-    cout << "\t\t    *******\tmangosteen\n";
+    Sleep(100);
+    cout << "\t\t    *******\tMANGOSTEEN   +1000 point\n";
+    Sleep(100);
     cout << "\t\t      ***\n\n\n";
 
     resetcolor();
 
     textcolor(15,0);
+    Sleep(100);
     cout << "\t\t      ****\n";
+    Sleep(100);
     cout << "\t\t      ****\n";
+    Sleep(100);
     cout << "\t\t      *";
-    
     textcolor(14,0);
     cout << "**";
     textcolor(15,0);
     cout << "*\n";
+    Sleep(100);
+    cout << "\t\t      *";
+    textcolor(14,0);
+    
+    cout << "**";
+    textcolor(15,0);
+    
+    cout << "*\tSERUM ANIMAL   +1000 point\n";
+    Sleep(100);
+    cout << "\t\t      *";
+    textcolor(14,0);
+    
+    cout << "**";
+    textcolor(15,0);
+    
+    cout << "*\n";
+    Sleep(100);
     
     cout << "\t\t      *";
     textcolor(14,0);
+    
     cout << "**";
     textcolor(15,0);
-    cout << "*\tserum animal\n";
+    cout << "*\n";
 
-    cout << "\t\t      *";
-    textcolor(14,0);
-    cout << "**";
-    textcolor(15,0);
-    cout << "*\n";
-
-    cout << "\t\t      *";
-    textcolor(14,0);
-    cout << "**";
-    textcolor(15,0);
-    cout << "*\n";
-  
-    cout << "\t\t       **\n";
-    
+    Sleep(100);
+    cout << "\t\t       **\n\n\n";
     resetcolor();
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    Sleep(100);
+    cout << "                     !!!FIND ALL GAT +1500 point!!!                           \n";
+    Sleep(1000);
+    cout << "\n\n\n";
+
+    Sleep(100);
+    cout << "\t\t    *****\n";
+    Sleep(100);
+    cout << "\t\t*************\n";
+    Sleep(100);
+    cout << "\t\t*    ";
+    textcolor(12,0);
+    cout << "***    ";
+    resetcolor();
+    cout << "*\n";
+    Sleep(100);
+    cout << "\t\t*  ";
+    textcolor(12,0);
+    cout << "*** ***  ";
+    resetcolor();
+    cout << "*\tFIRST AID   +20 HP\n";
+    Sleep(100);
+    cout << "\t\t*  ";
+    textcolor(12,0);
+    cout << "*** ***  ";
+    resetcolor();
+    cout << "*\t            +50 point\n";
+    Sleep(100);
+    cout << "\t\t*    ";
+    textcolor(12,0);
+    cout << "***    ";
+    resetcolor();
+    cout << "*\n";
+    Sleep(100);
+    cout << "\t\t*************\n\n\n";
+    Sleep(100);
+    textcolor(14,0);
+    cout << "\t\t         *\n";
+    Sleep(100);
+    textcolor(4,0);
+    cout << "\t\t        *\n";
+    Sleep(100);
+    cout << "\t\t      ***\t!!BOMB!! -30 HP\n";
+    Sleep(100);
+    cout << "\t\t    **";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "*";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "**\t         +100 point\n";
+    Sleep(100);
+    cout << "\t\t    **";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "*";
+    textcolor(8,0); cout << "*";
+    textcolor(4,0); cout << "**\n";
+    Sleep(100);
+    cout << "\t\t      ***\n\n\n";
+    Sleep(100);
+    resetcolor();
+    Sleep(1000);
+
+    
+    cout << " ___  .   . ..  .\n";
+    Sleep(100);
+    cout << "| __  |   | | \\ |\n";
+    Sleep(100);
+    cout << "|___| |___| |  \\|\n";
+    Sleep(100);
+    cout << "_________________\n";
+    Sleep(100);
+    cout << "_________________\n";
+    textcolor(8,0);
+    Sleep(100);
+    cout << "\t\t        **                  \t                        **\n";
+    Sleep(100);
+    cout << "    **********************      \t**                      **     \n";
+    Sleep(100);
+    cout << "********************************\t***********************************\n";
+    Sleep(100);
+    cout << "********************************\t***********************************\n";
+    Sleep(100);
+    cout << "****  *************             \t**       ******************      **\n";
+    cout << "****  **";
+    textcolor(7,0);
+    cout << "**";
+    textcolor(8,0);
+    cout << "*     ***             \t";
+    textcolor(7,0);
+    cout << "**";
+    textcolor(8,0);
+    Sleep(100);
+    cout << "*         ***\n";
+    Sleep(100);
+    cout << "      ***        ***            \t         ***          ***\n\n";
+    resetcolor();
+    Sleep(100);
+    cout << "M16                            \t\tBAZOOKA\n\n\n";
+    Sleep(1000);
+
+    textcolor(11,0);
+    cout << "\t\t     *****\n";
+    cout << "\t\t    *";
+    textcolor(7,0);
+    cout << "* *";
+    textcolor(11,0);
+    cout << "***\n";
+    Sleep(100);
+    cout << "\t\t    *";
+    textcolor(7,0);
+    cout << "****";
+    textcolor(11,0);
+    cout << "**\n";
+    Sleep(100);
+    textcolor(7,0);
+    cout << "\t\t      ****";
+    textcolor(11,0);
+    cout << "*\tKILL ZOMBIE +250 point\n";
+    Sleep(100);
+    textcolor(11,0);
+    cout << "\t\t *****";
+    textcolor(5,0);
+    cout << "*****\n";
+    Sleep(100);
+    textcolor(11,0);
+    cout << "\t\t*  *******";
+    textcolor(5,0);
+    cout << "*\n";
+    Sleep(100);
+    textcolor(11,0);
+    cout << "\t\t  * ";
+    textcolor(5,0);
+    cout << "  *****\n";
+    resetcolor();
+
+    cout << "..............................................................................\n";
+    Sleep(100);
+    cout << "..........................      PRESS TO START      ..........................\n";
+    Sleep(100);
+    cout << "..............................................................................\n";
 
 }
 
-
+    
 
 
 
