@@ -6,6 +6,7 @@
 #include<vector>
 #include"item.h"
 #include"callzombie.h"
+#include<fstream>
 #define textcolor(txt,back) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), back*16+txt)
 using namespace std;
 
@@ -99,7 +100,7 @@ void founditem(vector<string> &item);
 void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<string>&,string,int &,int &,int &);
 vector<string> createitem();
 
-void gamestart(string nameplayer){
+void gamestart(string nameplayer,int &score){
     
     system("cls");
     bool gamerunning=true;
@@ -108,7 +109,6 @@ void gamestart(string nameplayer){
     int runtime=0;
     int x=1;
     int y=1;
-    int score=0;
     int locmap=1;
     char press; int check=0;
     int hp=100; int itemquest=0; int atk=10;
@@ -150,6 +150,9 @@ void gamestart(string nameplayer){
         if(itemquest==4){score+=1500;gamerunning=false;}
         Sleep(80);  
     }
+    ofstream recordscore("score.txt");
+    recordscore<<score;
+    recordscore.close();
 }
 
 
@@ -161,7 +164,7 @@ vector<string> createitem(){
     item.push_back("mangosteen");
     item.push_back("serumanimal");
     item.push_back("m16");
-    for(int i=0;i<4;i++)item.push_back("firstAid");
+    for(int i=0;i<6;i++)item.push_back("firstAid");
     for(int i=0;i<4;i++)item.push_back("bomb");
     return item;
 }

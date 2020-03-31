@@ -4,12 +4,12 @@
 #include<string>
 #include"gamestart.h"
 #include<ctime>
+#include"record.h"
 using namespace std;
 
 int main(){
     srand(time(0));
     namegame();
-    
     playgame r;
     r.main_menu();
     ifstream f("player.txt");
@@ -19,6 +19,10 @@ int main(){
         if(!getline(f,text))break;
         else nameplayer=text;
     }
-    gamestart(nameplayer);
+    int score=0;
+    gamestart(nameplayer,score);
+    showscore(score);
+
+
 
 }
