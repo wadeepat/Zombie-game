@@ -43,10 +43,12 @@ void showstory(int a){
     int count=0,k,num;
 
     for(int j=0;j < 78;j++){
+        Sleep(20);
         cout << "#";
     }
     cout << "\n" ;
     for(int i=0;i<24;i++){
+        Sleep(20);
         cout << "#";
         if(i==8 || i==15){
             cout << " ";
@@ -68,6 +70,7 @@ void showstory(int a){
                     count++;
                     k=n;
                         if(s1[count]==c[0]){
+                            Sleep(100);
                             cout << s1[count];
                             count++;
                             num++;
@@ -86,6 +89,7 @@ void showstory(int a){
                     count++;
                     k=n;
                         if(s2[count]==c[0]){
+                            Sleep(100);
                             cout << s2[count];
                             count++;
                             num++;
@@ -104,6 +108,7 @@ void showstory(int a){
                     count++;
                     k=n;
                         if(s3[count]==c[0] || s3[count]==c[1]){
+                            Sleep(100);
                             cout << s3[count];
                             count++;
                             num++;
@@ -122,6 +127,7 @@ void showstory(int a){
                     count++;
                     k=n;
                         if(s4[count]==c[0] || s4[count]==c[1]){
+                            Sleep(100);
                             cout << s4[count];
                             count++;
                             num++;
@@ -146,17 +152,20 @@ void showstory(int a){
             }
         }
         textcolor(15,0);
+        Sleep(20);
         cout << "#";
         cout << "\n" ;
 
     }
     for(int j=0;j < 26;j++){
+        Sleep(20);
         cout << "#";
     }
     textcolor(3,0); 
     cout << "::: press to continue :::";
     resetcolor();
     for(int j=0;j < 27;j++){
+        Sleep(20);
         cout << "#";
     }
     cout << "\n\n\n";
@@ -166,19 +175,31 @@ void showstory(int a){
 
 
 void tutorial(){
-    cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
+    cout << "\n";
     textcolor(3,0); 
+    Sleep(100);
     cout << "               : _____ .  . _____  __   __  _____   _   .     :              \n";
+    Sleep(100);
     cout << "               :   |   |  |   |   |  | |__|   |    /_\\  |     :              \n";
+    Sleep(100);
     cout << "               :   |   |__|   |   |__| |  \\ __|__ /   \\ |___  :              \n";
+    Sleep(100);
     resetcolor();
+    Sleep(100);
     cout << "\n";
+    Sleep(100);
     cout << "\n";
+    Sleep(100);
     cout << "\n";
+    Sleep(100);
     cout << "\n";
+    Sleep(100);
     cout << " ___  __  ..  .  _____  __   __  .\n";
+    Sleep(100);
     cout << "|    |  | | \\ |    |   |__| |  | | \n";
+    Sleep(100);
     cout << "|___ |__| |  \\|    |   |  \\ |__| |___\n";
+    Sleep(100);
     cout << "-------------------------------------\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
@@ -199,68 +220,68 @@ void tutorial(){
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
     textcolor(10,0);
-    cout << "\t *\n";
-    cout << "\t****\n";
-    cout << "\t*****\n";
-    cout << "\t ***    **\n";
+    cout << "\t\t *\n";
+    cout << "\t\t****\n";
+    cout << "\t\t*****\n";
+    cout << "\t\t ***    **\tspinach\n";
 
     textcolor(2,0);
-    cout << "\t   *  ***\n";
-    cout << "\t    **\n";
-    cout << "\t    *\n";
+    cout << "\t\t   *  ***\n";
+    cout << "\t\t    **\n";
+    cout << "\t\t    *\n\n\n";
 
     resetcolor();
 
     textcolor(10,0);
-    cout << "\t         *\n";
-    cout << "\t         *\n";
+    cout << "\t\t         *\n";
+    cout << "\t\t         *\n";
 
     textcolor(12,0);
-    cout << "\t        **\n";
-    cout << "\t       ***\n";
-    cout << "\t      ***\n";
-    cout << "\t     **\n";
-    cout << "\t   *\n";
+    cout << "\t\t        **\n";
+    cout << "\t\t       ***\tchilli\n";
+    cout << "\t\t      ***\n";
+    cout << "\t\t     **\n";
+    cout << "\t\t   *\n\n\n";
 
     resetcolor();
 
     textcolor(13,0);
-    cout << "\t      ***\n";
-    cout << "\t    *******\n";
-    cout << "\t    *******\n";
-    cout << "\t      ***\n";
+    cout << "\t\t      ***\n";
+    cout << "\t\t    *******\n";
+    cout << "\t\t    *******\tmangosteen\n";
+    cout << "\t\t      ***\n\n\n";
 
     resetcolor();
 
     textcolor(15,0);
-    cout << "\t      ****\n";
-    cout << "\t      ****\n";
-    cout << "\t      *";
+    cout << "\t\t      ****\n";
+    cout << "\t\t      ****\n";
+    cout << "\t\t      *";
     
     textcolor(14,0);
     cout << "**";
     textcolor(15,0);
     cout << "*\n";
     
-    cout << "\t      *";
+    cout << "\t\t      *";
+    textcolor(14,0);
+    cout << "**";
+    textcolor(15,0);
+    cout << "*\tserum animal\n";
+
+    cout << "\t\t      *";
     textcolor(14,0);
     cout << "**";
     textcolor(15,0);
     cout << "*\n";
 
-    cout << "\t      *";
-    textcolor(14,0);
-    cout << "**";
-    textcolor(15,0);
-    cout << "*\n";
-
-    cout << "\t      *";
+    cout << "\t\t      *";
     textcolor(14,0);
     cout << "**";
     textcolor(15,0);
     cout << "*\n";
   
-    cout << "\t       **\n";
+    cout << "\t\t       **\n";
     
     resetcolor();
     cout << "..........................aaaaaaaaaaaaaaaaaaaaaaaaaa..........................\n";
