@@ -41,7 +41,7 @@ Unit hero,zom;
 		zombie_action = 'A';
 		
 		
-		if(player_action == 'A') p = hero.attack(zom,10); 
+		if(player_action == 'A') p = hero.attack(zom,atk); 
 		if(zombie_action == 'A'){
 			if(ra == 1){
 				m = zom.attack(hero,atkz1);
