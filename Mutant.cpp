@@ -5,6 +5,7 @@
 #include"gamestart.h"
 #include<ctime>
 #include"record.h"
+#include"story.h"
 using namespace std;
 
 int main(){
@@ -13,6 +14,7 @@ int main(){
     opengame();
     ifstream f("player.txt");
     string nameplayer,text;
+    story();
     while(1){
         getline(f,nameplayer);
         if(!getline(f,text))break;
