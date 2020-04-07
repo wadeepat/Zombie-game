@@ -38,23 +38,33 @@ void yourscore(int score){
     goxy(26+8,10+5);cout<<setfill(' ')<<"------------------\n";
     Sleep(4000);
 }
-// void showrecord(){
+
+void showrecord(){
     
-//     ifstream readname("player.txt");
-//     vector<string>v_name; vector<int>v_score; string text;
-//     while(getline(readname,text)){
-//         v_name.push_back(text);
-//     }
-//     readname.close();
-//     ifstream readscore("score.txt");
-//     while(getline(readscore,text)){
-//         v_score.push_back(stoi(text.c_str()));
-//     }
-//     readscore.close();
+    ifstream readname("player.txt");
+    vector<string>v_name; vector<int>v_score; string text;
+    while(getline(readname,text)){
+        v_name.push_back(text);
+    }
+    readname.close();
+    ifstream readscore("score.txt");
+    while(getline(readscore,text)){
+        v_score.push_back(atoi(text.c_str()));
+    }
+    readscore.close();
 
-//     for(int i=0;i<10;i++){
-//         for(int j=0;j<v_score.size();j++){
-
-//         }
-//     }
-// }
+    cout<<"------------------------------------------------------------------------\n";
+    cout<<"|                                                                      |\n";
+    cout<<"|                           | SCORE RECORD |                           |\n";
+    cout<<"|                                                                      |\n";
+    cout<<"|             NAME                                    SCORE            |\n";
+    cout<<"|                                                                      |\n";
+    cout<<"------------------------------------------------------------------------\n";
+    for (int k = 0; k < 10; k++){
+        if(k > v_name.size()-1){;
+        }else{ 
+            cout << "|"<< setw(17) << v_name[k] << "\t\t\t\t\t" << v_score[k] << "              |\n";
+            cout<<"------------------------------------------------------------------------\n";
+        }   
+    }
+}
