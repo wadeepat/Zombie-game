@@ -5,6 +5,90 @@
 #define textcolor(txt,back) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), back*16+txt)
 using namespace std;
 
+void missioncleared(){
+    system("cls");
+    cout<<endl<<endl<<endl<<endl<<endl;
+    cout<<"        ------------------------------------------------------------------------\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |    ##       ##  ######  ######  ######  ######  ######  ###    ##    |\n";
+    cout<<"        |    ###     ###    ##    ##      ##        ##    ##  ##  ## ##  ##    |\n";
+    cout<<"        |    ## #   # ##    ##    ######  ######    ##    ##  ##  ##  ## ##    |\n";
+    cout<<"        |    ##  # #  ##    ##        ##      ##    ##    ##  ##  ##   ####    |\n";
+    cout<<"        |    ##   #   ##  ######  ######  ######  ######  ######  ##    ###    |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        ------------------------------------------------------------------------";
+    Sleep(2000);
+    system("cls");
+    cout<<endl<<endl<<endl<<endl<<endl;
+    cout<<"        ------------------------------------------------------------------------\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |    ######  ##      ######      ##      #######   ######   #####      |\n";
+    cout<<"        |   ##       ##      ##         ####     ##    ##  ##       ##   ##    |\n";
+    cout<<"        |   ##       ##      ######    ##  ##    #######   ######   ##   ##    |\n";
+    cout<<"        |   ##       ##      ##       ########   ##   ##   ##       ##   ##    |\n";
+    cout<<"        |    ######  ######  ######  ##      ##  ##    ##  ######   #####      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        ------------------------------------------------------------------------";
+    Sleep(4000);
+}
+void missionfailed(){
+    system("cls");
+    cout<<endl<<endl<<endl<<endl<<endl;
+    cout<<"        ------------------------------------------------------------------------\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |    ##       ##  ######  ######  ######  ######  ######  ###    ##    |\n";
+    cout<<"        |    ###     ###    ##    ##      ##        ##    ##  ##  ## ##  ##    |\n";
+    cout<<"        |    ## #   # ##    ##    ######  ######    ##    ##  ##  ##  ## ##    |\n";
+    cout<<"        |    ##  # #  ##    ##        ##      ##    ##    ##  ##  ##   ####    |\n";
+    cout<<"        |    ##   #   ##  ######  ######  ######  ######  ######  ##    ###    |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        ------------------------------------------------------------------------";
+    Sleep(2000);
+    system("cls");
+    cout<<endl<<endl<<endl<<endl<<endl;
+    cout<<"        ------------------------------------------------------------------------\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |          ######     ##      ######  ##      ######  #####            |\n";
+    cout<<"        |          ##        ####       ##    ##      ##      ##   ##          |\n";
+    cout<<"        |          ######   ##  ##      ##    ##      ######  ##   ##          |\n";
+    cout<<"        |          ##      ########     ##    ##      ##      ##   ##          |\n";
+    cout<<"        |          ##     ##      ##  ######  ######  ######  #####            |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        ------------------------------------------------------------------------";
+    Sleep(4000);
+}
 void gotoxy(int x,int y){
     COORD coord;
     coord.X=x;
@@ -63,7 +147,7 @@ void mangosteen(){
     gotoxy(35,10);                      cout<<"         *******          ";
     gotoxy(35,11);                      cout<<"           ***            ";
     gotoxy(35,12);                      cout<<"                          ";
-    gotoxy(35,13);textcolor(6,0);       cout<<"    You found a mangosteen.   "; textcolor(7,0);
+    gotoxy(35,13);textcolor(6,0);       cout<<"  You found a mangosteen. "; textcolor(7,0);
 }
 
 void serumanimal(){
@@ -111,12 +195,12 @@ void m16(){
 }   
  
 void bazooka(){
-    textcolor(4,0);gotoxy(35,6);        cout << "                        **";
-    gotoxy(35,7);                       cout << "**                      **";
-    gotoxy(35,8);                       cout << "***********************************";
-    gotoxy(35,9);                       cout << "***********************************";
-    gotoxy(35,10);                      cout << "**       ******************      **";
-    gotoxy(35,11;                       cout << "         **";textcolor(7,0);cout << "**";textcolor(4,0);cout << "*         ***";
-    gotoxy(35,12);                      cout << "         ***          ***";
-    gotoxy(35,13);textcolor(6,0);       cout<<"      You found a bazooka.     "; textcolor(7,0);
+    textcolor(4,0);gotoxy(35,6);        cout<< "                 **";
+    gotoxy(35,7);                       cout<< " **              **";
+    gotoxy(35,8);                       cout<< " *************************";
+    gotoxy(35,9);                       cout<< " *************************";
+    gotoxy(35,10);                      cout<< " **  ***************    **";
+    gotoxy(35,11);                      cout<< "     **";textcolor(7,0);cout << "**";textcolor(4,0);cout << "*      ***";
+    gotoxy(35,12);                      cout<< "      ***       ***";
+    gotoxy(35,13);textcolor(6,0);       cout<<"    You found a bazooka."; textcolor(7,0);
 }
