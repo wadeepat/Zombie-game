@@ -8,10 +8,9 @@
 using namespace std;
 
 int main(){
+    system("cls");
     srand(time(0));
-    namegame();
-    playgame r;
-    r.main_menu();
+    opengame();
     ifstream f("player.txt");
     string nameplayer,text;
     while(1){
@@ -21,7 +20,7 @@ int main(){
     }
     int score=0;
     gamestart(nameplayer,score);
-    showscore(score);
+    yourscore(score);
 
 
 
