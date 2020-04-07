@@ -37,7 +37,7 @@ char map3[17][79]={
     "##                     ##      ##################                           ##",                                                
     "##                     ##########              ##       ##                  ##",                                                
     "##                                             ##       ##                  ##",                                                 
-    "##                                             ##       #########   ##########",                                                
+    "##*                                            ##       #########   ##########",                                                
     "###################   ##############           ##                           ##",                                                
     "##               ##   ##        * ##           ##############               ##",                                              
     "##               ##        #########                       ##     #####     ##",                                                 
@@ -45,7 +45,7 @@ char map3[17][79]={
     "##                                                                ##        ##",                                                  
     "##     #######################################             #########        ##",                                                  
     "##  *  ##                                   ##                              ##",                                                  
-    "####   ###########                          ##                              ##",
+    "####   ###########                          ## *                            ##",
     "##              ##                          ############################    ##",
     "##              ##*                                                         ##",
     "##############################################################################"
@@ -59,7 +59,7 @@ char map2[17][79]={
     "##               ##                         *          ##                   ##",                                                 
     "##               ##########                   ###########      ###############",                                                
     "#########        ####                         ##                            ##",                                                
-    "##    *##        ##                           ##                            ##",                                              
+    "##    *##        ##          *                ##                            ##",                                              
     "##     ##        ##                           ##################            ##",                                                 
     "##     ##        ##                                                         ##",                                                 
     "##     ##        ##                                                         ##",                                                  
@@ -119,10 +119,10 @@ void gamestart(string nameplayer,int &score){
     while(gamerunning){
         time(&stop);
         runtime=stop-start;
-        if(runtime==120)break;
+        if(runtime>=120){missionfailed();gamerunning=false;};
         if(runtime%20==0 && runtime!=0){    //zombie
             if(rand()%3==0){
-                frame2();
+                ClearConsoleInputBuffer(); frame2();
                 Sleep(1000);ClearConsoleInputBuffer();
                 system("cls");ZombieZone(name,hp,atk,check);system("cls");if(check==1)score+=250;check=0;//scorefromzombie
                 drawmap(score,runtime);charactordata(name,hp,atk,itemquest);showscore(score);
@@ -146,8 +146,8 @@ void gamestart(string nameplayer,int &score){
             move(press,x,y,score,locmap,runtime,item,name,hp,atk,itemquest);
         }
         if(GetAsyncKeyState(0x46))gamerunning=false;
-        if(hp==0)gamerunning=false;
-        if(itemquest==4){score+=1500;gamerunning=false;}
+        if(hp==0){missionfailed();gamerunning=false;}
+        if(itemquest==4){score+=1500;missioncleared();gamerunning=false;}
         Sleep(80);  
     }
     ofstream recordscore("score.txt");
@@ -163,8 +163,9 @@ vector<string> createitem(){
     item.push_back("chilli");
     item.push_back("mangosteen");
     item.push_back("serumanimal");
-    item.push_back("m16");
-    for(int i=0;i<6;i++)item.push_back("firstAid");
+    for(int i=0;i<2;i++)item.push_back("m16");
+    item.push_back("bazooka");
+    for(int i=0;i<10;i++)item.push_back("firstAid");
     for(int i=0;i<4;i++)item.push_back("bomb");
     return item;
 }
@@ -308,8 +309,13 @@ void founditem(vector<string> &item,int &hp,int &atk,int &itemquest,int &score){
         if(hp-30<0)hp=0;else hp-=30; score+=100;
     }else if(item[n]=="m16"){
         m16();
-        atk=20;
-    }   
+        if(atk<20)atk=20;
+        score+=30;
+    }else if(item[n]=="bazooka"){
+        bazooka();
+        atk=30;
+        score+=50;
+    }      
     item.erase(item.begin()+n);
 }
 
