@@ -157,8 +157,8 @@ void playgame::create_account(){
 	cout<<".";
 	Sleep(400);	
 }
-// void opengame(){
-//     namegame();
-//     playgame r;
-//     r.main_menu();
-// }
+void opengame(){
+    namegame();
+    playgame r;
+    r.main_menu();
+}
