@@ -23,7 +23,5 @@ int main(){
     int score=0;
     gamestart(nameplayer,score);
     yourscore(score);
-
-
-
+    showrecord();
 }

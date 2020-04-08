@@ -406,7 +406,7 @@ void tutorial(){
     cout << "\t\t       **\n\n\n";
     resetcolor();
     Sleep(100);
-    cout << "                     !!!FIND ALL GAT +1500 point!!!                           \n";
+    cout << "                     !!!FIND ALL GET +1500 point!!!                           \n";
     Sleep(1000);
     cout << "\n\n\n";
 

@@ -4,6 +4,7 @@
 #include<string>
 #include<Windows.h>
 #include<iomanip>
+#include"sort.h"
 using namespace std;
 
 void goxy(int x,int y){
@@ -40,7 +41,7 @@ void yourscore(int score){
 }
 
 void showrecord(){
-    
+    system("cls");
     ifstream readname("player.txt");
     vector<string>v_name; vector<int>v_score; string text;
     while(getline(readname,text)){
@@ -53,18 +54,24 @@ void showrecord(){
     }
     readscore.close();
 
-    cout<<"------------------------------------------------------------------------\n";
-    cout<<"|                                                                      |\n";
-    cout<<"|                           | SCORE RECORD |                           |\n";
-    cout<<"|                                                                      |\n";
-    cout<<"|             NAME                                    SCORE            |\n";
-    cout<<"|                                                                      |\n";
-    cout<<"------------------------------------------------------------------------\n";
-    for (int k = 0; k < 10; k++){
-        if(k > v_name.size()-1){;
-        }else{ 
-            cout << "|"<< setw(17) << v_name[k] << "\t\t\t\t\t" << v_score[k] << "              |\n";
-            cout<<"------------------------------------------------------------------------\n";
-        }   
+    //arrage rank
+    int nowscore=v_score[0];
+    for(int i=0;i<v_score.size();i++){
+
     }
+    insertionSort(v_score,v_name);
+    cout<<endl<<endl<<endl<<endl;
+    cout<<"        ------------------------------------------------------------------------\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |                           | SCORE RECORD |                           |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        |             NAME                                    SCORE            |\n";
+    cout<<"        |                                                                      |\n";
+    cout<<"        ------------------------------------------------------------------------\n";
+    for (int k =0; k<10 && k<v_score.size(); k++){
+        goxy(8+0,k+7+4);cout<<"|";goxy(8+11,k+7+4);cout<<k+1<<".";goxy(8+15,k+7+4);cout<<v_name[k];goxy(8+54,4+k+7);cout<<setw(5)<<setfill('0')<<v_score[k]<<setfill(' ');goxy(8+71,4+k+7);cout<<"|";
+    }
+    cout<<endl<<"        ------------------------------------------------------------------------";Sleep(4000);
+    cout<<endl<<endl<<"                                  Press any key to close";
+    getch();
 }

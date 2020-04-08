@@ -150,8 +150,8 @@ void gamestart(string nameplayer,int &score){
         if(itemquest==4){score+=1500;missioncleared();gamerunning=false;}
         Sleep(80);  
     }
-    ofstream recordscore("score.txt");
-    recordscore<<score;
+    ofstream recordscore("score.txt",ios::app);
+    recordscore<<score<<endl;
     recordscore.close();
 }
 
@@ -321,10 +321,10 @@ void founditem(vector<string> &item,int &hp,int &atk,int &itemquest,int &score){
 
 void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<string> &item,string name,int &hp,int &atk,int &itemquest){
     if(press=='w'){
-        if(map[x-1][y]=='|'){changemap(locmap,x,y,score,runtime);charactordata(name,hp,atk,itemquest);}
+        if(map[x-1][y]=='|'){ClearConsoleInputBuffer();changemap(locmap,x,y,score,runtime);charactordata(name,hp,atk,itemquest);}
         else if(map[x-1][y]!='#'){
             if(map[x-1][y]=='*') {
-                founditem(item,hp,atk,itemquest,score); Sleep(1500);
+                ClearConsoleInputBuffer();founditem(item,hp,atk,itemquest,score); Sleep(1500);
                 drawmap(score,runtime);charactordata(name,hp,atk,itemquest);}
             map[x][y]=' ';
             gotoxy(8+y,3+x);
@@ -335,11 +335,11 @@ void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<str
         }
     }
     else if(press=='a'){
-        if(map[x][y-1]=='|'){changemap(locmap,x,y,score,runtime);charactordata(name,hp,atk,itemquest);}
+        if(map[x][y-1]=='|'){ClearConsoleInputBuffer();changemap(locmap,x,y,score,runtime);charactordata(name,hp,atk,itemquest);}
         
         else if(map[x][y-1]!='#'){
             if(map[x][y-1]=='*') {
-                founditem(item,hp,atk,itemquest,score); Sleep(1500);
+                ClearConsoleInputBuffer();founditem(item,hp,atk,itemquest,score); Sleep(1500);
                 drawmap(score,runtime);charactordata(name,hp,atk,itemquest);}
             map[x][y]=' ';
             gotoxy(8+y,3+x);
@@ -350,9 +350,9 @@ void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<str
         }
     }
     else if(press=='s'){
-        if(map[x+1][y]=='|'){changemap(locmap,x,y,score,runtime);charactordata(name,hp,atk,itemquest);}
+        if(map[x+1][y]=='|'){ClearConsoleInputBuffer();changemap(locmap,x,y,score,runtime);charactordata(name,hp,atk,itemquest);}
         else if(map[x+1][y]!='#'){
-            if(map[x+1][y]=='*') {
+            ClearConsoleInputBuffer();if(map[x+1][y]=='*') {
             founditem(item,hp,atk,itemquest,score); Sleep(1500);
             drawmap(score,runtime);charactordata(name,hp,atk,itemquest);}
             map[x][y]=' ';
@@ -364,10 +364,10 @@ void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<str
         }
     }
     else if(press=='d'){
-        if(map[x][y+1]=='|'){changemap(locmap,x,y,score,runtime);charactordata(name,hp,atk,itemquest);}
+        if(map[x][y+1]=='|'){ClearConsoleInputBuffer();changemap(locmap,x,y,score,runtime);charactordata(name,hp,atk,itemquest);}
         else if(map[x][y+1]!='#'){
             if(map[x][y+1]=='*') {
-            founditem(item,hp,atk,itemquest,score); Sleep(1500); 
+            ClearConsoleInputBuffer();founditem(item,hp,atk,itemquest,score); Sleep(1500); 
             drawmap(score,runtime);charactordata(name,hp,atk,itemquest);}
             map[x][y]=' ';
             gotoxy(8+y,3+x);

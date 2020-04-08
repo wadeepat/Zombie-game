@@ -141,7 +141,7 @@ void playgame::create_account(){
     getline(cin,nameplayer);
     ofstream player;
     player.open("player.txt",ios::app);
-	player<<nameplayer<< "\n" ;
+	player<<nameplayer<<endl;
     player.close();
 	effect(35,13);
 	cout<<" SUBMIT";
@@ -154,7 +154,7 @@ void playgame::create_account(){
 	Sleep(400);
 	cout<<".";
 	Sleep(400);
-	cout<<".";
+	cout<<"."<<endl;
 	Sleep(400);	
 }
 void opengame(){
