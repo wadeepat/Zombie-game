@@ -13,8 +13,8 @@ using namespace std;
 
 class playgame{
 	public:
-	void create_account();
-	void main_menu();
+	void create_account(string&);
+	void main_menu(string&);
 		
 };
 void chaeckname(string d,vector<string> vname){
@@ -103,7 +103,7 @@ void namegame(){
 	Sleep(2000);
 system("cls");
 }
-void playgame:: main_menu(){
+void playgame:: main_menu(string &nameplayer){
 	int j,i,x,y;
 	for(i=0;i<35;i++){
 		effect(i,12);cout<<" ";
@@ -123,9 +123,9 @@ void playgame:: main_menu(){
     cout << "Press [Enter] to start";
     cin.get();
     playgame n;
-    n.create_account();
+    n.create_account(nameplayer);
 }
-void playgame::create_account(){
+void playgame::create_account(string &nameplayer){
 	playgame a;
 	system("cls");
 	for(int i=0;i<17;i++)
@@ -137,11 +137,10 @@ void playgame::create_account(){
 	}
 	effect(7,2);
     cout << "Enter your name : ";
-	string nameplayer;
     getline(cin,nameplayer);
     ofstream player;
     player.open("player.txt",ios::app);
-	player<<nameplayer<<endl;
+	player<<nameplayer;
     player.close();
 	effect(35,13);
 	cout<<" SUBMIT";
@@ -157,8 +156,8 @@ void playgame::create_account(){
 	cout<<"."<<endl;
 	Sleep(400);	
 }
-void opengame(){
+void opengame(string &nameplayer){
     namegame();
     playgame r;
-    r.main_menu();
+    r.main_menu(nameplayer);
 }

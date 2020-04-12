@@ -6,7 +6,6 @@
 #include<iomanip>
 #include"sort.h"
 using namespace std;
-
 void goxy(int x,int y){
     COORD coord;
     coord.X=x;
@@ -16,27 +15,27 @@ void goxy(int x,int y){
 void yourscore(int score){
     system("cls");
     cout<<endl<<endl<<endl<<endl<<endl;
-    cout<<"        ------------------------------------------------------------------------\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        ------------------------------------------------------------------------";
-    goxy(26+8,7+5);cout<<" Your score is";Sleep(1000);cout<<".";Sleep(800);cout<<".";Sleep(800);cout<<".";Sleep(800);
-    goxy(26+8,8+5);cout<<"------------------";
-    goxy(26+8,9+5);cout<<"|  Score: ";cout<<setw(5)<<setfill('0')<<score<<"  |";
-    goxy(26+8,10+5);cout<<setfill(' ')<<"------------------\n";
+    cout<<"\t\t\t\t\t\t\t------------------------------------------------------------------------\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t------------------------------------------------------------------------";
+    goxy(26+56,7+5);cout<<" Your score is";Sleep(1000);cout<<".";Sleep(800);cout<<".";Sleep(800);cout<<".";Sleep(800);
+    goxy(26+56,8+5);cout<<"------------------";
+    goxy(26+56,9+5);cout<<"|  Score: ";cout<<setw(5)<<setfill('0')<<score<<"  |";
+    goxy(26+56,10+5);cout<<setfill(' ')<<"------------------\n";
     Sleep(4000);
 }
 
@@ -61,17 +60,18 @@ void showrecord(){
     }
     insertionSort(v_score,v_name);
     cout<<endl<<endl<<endl<<endl;
-    cout<<"        ------------------------------------------------------------------------\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |                           | SCORE RECORD |                           |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        |             NAME                                    SCORE            |\n";
-    cout<<"        |                                                                      |\n";
-    cout<<"        ------------------------------------------------------------------------\n";
+    cout<<"\t\t\t\t\t\t\t------------------------------------------------------------------------\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|                           | SCORE RECORD |                           |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t|             NAME                                    SCORE            |\n";
+    cout<<"\t\t\t\t\t\t\t|                                                                      |\n";
+    cout<<"\t\t\t\t\t\t\t------------------------------------------------------------------------\n";
     for (int k =0; k<10 && k<v_score.size(); k++){
-        goxy(8+0,k+7+4);cout<<"|";goxy(8+11,k+7+4);cout<<k+1<<".";goxy(8+15,k+7+4);cout<<v_name[k];goxy(8+54,4+k+7);cout<<setw(5)<<setfill('0')<<v_score[k]<<setfill(' ');goxy(8+71,4+k+7);cout<<"|";
+        goxy(56+0,k+7+4);cout<<"|";goxy(56+11,k+7+4);cout<<k+1<<".";goxy(56+15,k+7+4);cout<<v_name[k];goxy(56+54,4+k+7);cout<<setw(5)<<setfill('0')<<v_score[k]<<setfill(' ');goxy(56+71,4+k+7);cout<<"|";
     }
-    cout<<endl<<"        ------------------------------------------------------------------------";Sleep(4000);
-    cout<<endl<<endl<<"                                  Press any key to close";
+    cout<<endl<<"\t\t\t\t\t\t\t------------------------------------------------------------------------";Sleep(4000);
+    cout<<endl<<endl<<"\t\t\t\t\t\t\t                          Press any key to close";
+    ClearConsoleInputBuffer();
     getch();
 }

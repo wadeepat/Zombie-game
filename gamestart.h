@@ -11,6 +11,7 @@
 using namespace std;
 
 HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);
+int setpage=56;
 char map[17][79]={
     "###############################       ########################################",
     "#@                           ###########                ##      *           ##",                                                
@@ -101,7 +102,7 @@ void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<str
 vector<string> createitem();
 
 void gamestart(string nameplayer,int &score){
-    
+    ClearConsoleInputBuffer();
     system("cls");
     bool gamerunning=true;
     time_t start,stop;
@@ -120,8 +121,9 @@ void gamestart(string nameplayer,int &score){
         time(&stop);
         runtime=stop-start;
         if(runtime>=120){missionfailed();gamerunning=false;};
-        if(runtime%20==0 && runtime!=0){    //zombie
-            if(rand()%3==0){
+        if(runtime%20==0 && runtime!=0 && runtime!=120){    //zombie
+            int a =rand()%3;
+            if(a==0){
                 ClearConsoleInputBuffer(); frame2();
                 Sleep(1000);ClearConsoleInputBuffer();
                 system("cls");ZombieZone(name,hp,atk,check);system("cls");if(check==1)score+=250;check=0;//scorefromzombie
@@ -155,8 +157,6 @@ void gamestart(string nameplayer,int &score){
     recordscore.close();
 }
 
-
-
 vector<string> createitem(){
     vector<string>item;
     item.push_back("spinach");
@@ -172,40 +172,40 @@ vector<string> createitem(){
 
 void charactordata(string name,int hp,int atk,int itemquest){
     
-    gotoxy(9,22);textcolor(4,0); cout << " *****"; textcolor(14,0); cout << "         *   "; 
-    gotoxy(9,23);textcolor(4,0); cout << "*******"; textcolor(14,0); cout << "       **   "; 
-    gotoxy(9,24);textcolor(4,0); cout << "**"; textcolor(1,0); cout << "* *"; textcolor(4,0); cout << "**"; textcolor(14,0); cout << "      ***   ";
-    gotoxy(9,25);textcolor(4,0); cout << " *****"; textcolor(14,0); cout << "      ***    ";
-    gotoxy(9,26);textcolor(4,0); cout << "**";  textcolor(1,0); cout << "***"; textcolor(4,0); cout <<"**";textcolor(14,0); cout << "   ******   ";
-    gotoxy(9,27);textcolor(4,0); cout << "**"; textcolor(1,0); cout << "***"; textcolor(4,0); cout <<"**"; textcolor(14,0); cout << "    **\n";
-    gotoxy(9,28);textcolor(4,0); cout << "*******"; textcolor(14,0); cout << "   **"; textcolor(7,0);
+    gotoxy(1+setpage,22);textcolor(4,0); cout << " *****"; textcolor(14,0); cout << "         *   "; 
+    gotoxy(1+setpage,23);textcolor(4,0); cout << "*******"; textcolor(14,0); cout << "       **   "; 
+    gotoxy(1+setpage,24);textcolor(4,0); cout << "**"; textcolor(1,0); cout << "* *"; textcolor(4,0); cout << "**"; textcolor(14,0); cout << "      ***   ";
+    gotoxy(1+setpage,25);textcolor(4,0); cout << " *****"; textcolor(14,0); cout << "      ***    ";
+    gotoxy(1+setpage,26);textcolor(4,0); cout << "**";  textcolor(1,0); cout << "***"; textcolor(4,0); cout <<"**";textcolor(14,0); cout << "   ******   ";
+    gotoxy(1+setpage,27);textcolor(4,0); cout << "**"; textcolor(1,0); cout << "***"; textcolor(4,0); cout <<"**"; textcolor(14,0); cout << "    **\n";
+    gotoxy(1+setpage,28);textcolor(4,0); cout << "*******"; textcolor(14,0); cout << "   **"; textcolor(7,0);
 
-    gotoxy(29,22);cout<<"NAME: "<<name;
-    gotoxy(29,23);cout<<"HP: "<<hp<<"/100";
-    gotoxy(29,24);cout<<"Attack: "<<atk;
-    gotoxy(29,25);cout<<"ITEM: "<<itemquest;
+    gotoxy(21+setpage,22);cout<<"NAME: "<<name;
+    gotoxy(21+setpage,23);cout<<"HP: "<<hp<<"/100";
+    gotoxy(21+setpage,24);cout<<"Attack: "<<atk;
+    gotoxy(21+setpage,25);cout<<"ITEM: "<<itemquest;
 }
 
 void showscore(int score){
-    gotoxy(68,0);cout<<"------------------";
-    gotoxy(68,1);cout<<"|  Score: ";cout<<setw(5)<<setfill('0')<<score<<"  |";
-    gotoxy(68,2);cout<<setfill(' ')<<"------------------\n";
+    gotoxy(60+setpage,0);cout<<"------------------";
+    gotoxy(60+setpage,1);cout<<"|  Score: ";cout<<setw(5)<<setfill('0')<<score<<"  |";
+    gotoxy(60+setpage,2);cout<<setfill(' ')<<"------------------\n";
 }
 
 void showtime(int runtime){
-    gotoxy(40,0);cout<<"-----------------";
-    gotoxy(40,1);cout<<"|  Time: ";cout<<setw(5)<<setfill('0')<<runtime<<"  |"<<setfill(' ');
-    gotoxy(40,2);cout<<"-----------------\n";
+    gotoxy(32+setpage,0);cout<<"-----------------";
+    gotoxy(32+setpage,1);cout<<"|  Time: ";cout<<setw(5)<<setfill('0')<<runtime<<"  |"<<setfill(' ');
+    gotoxy(32+setpage,2);cout<<"-----------------\n";
 }
 
 void updatetime(int runtime){
-    gotoxy(49,1);cout<<setw(5)<<setfill('0')<<runtime<<setfill(' ');
+    gotoxy(49+setpage,1);cout<<setw(5)<<setfill('0')<<runtime<<setfill(' ');
 }
 
 void drawmap(int score,int runtime){
     showtime(runtime); showscore(score);
     for(int i=0;i<17;i++){
-    cout<<"\t";
+    cout<<"\t\t\t\t\t\t\t";
         for(int j=0;j<79;j++){
             if(map[i][j]=='@')SetConsoleTextAttribute(h,4);
             if(map[i][j]=='*')textcolor(6,0);
@@ -327,10 +327,10 @@ void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<str
                 ClearConsoleInputBuffer();founditem(item,hp,atk,itemquest,score); Sleep(1500);
                 drawmap(score,runtime);charactordata(name,hp,atk,itemquest);}
             map[x][y]=' ';
-            gotoxy(8+y,3+x);
+            gotoxy(y+setpage,3+x);
             cout<<' ';
             x=x-1;
-            gotoxy(8+y,3+x);
+            gotoxy(y+setpage,3+x);
             textcolor(4,0);cout<<'@';textcolor(7,0);
         }
     }
@@ -342,10 +342,10 @@ void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<str
                 ClearConsoleInputBuffer();founditem(item,hp,atk,itemquest,score); Sleep(1500);
                 drawmap(score,runtime);charactordata(name,hp,atk,itemquest);}
             map[x][y]=' ';
-            gotoxy(8+y,3+x);
+            gotoxy(y+setpage,3+x);
             cout<<' ';
             y=y-1;
-            gotoxy(8+y,3+x);
+            gotoxy(y+setpage,3+x);
             textcolor(4,0);cout<<'@';textcolor(7,0);
         }
     }
@@ -356,10 +356,10 @@ void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<str
             founditem(item,hp,atk,itemquest,score); Sleep(1500);
             drawmap(score,runtime);charactordata(name,hp,atk,itemquest);}
             map[x][y]=' ';
-            gotoxy(8+y,3+x);
+            gotoxy(y+setpage,3+x);
             cout<<' ';
             x=x+1;
-            gotoxy(8+y,3+x);
+            gotoxy(y+setpage,3+x);
             textcolor(4,0);cout<<'@';textcolor(7,0);
         }
     }
@@ -370,10 +370,10 @@ void move(char &press,int &x,int&y,int &score,int &locmap,int runtime,vector<str
             ClearConsoleInputBuffer();founditem(item,hp,atk,itemquest,score); Sleep(1500); 
             drawmap(score,runtime);charactordata(name,hp,atk,itemquest);}
             map[x][y]=' ';
-            gotoxy(8+y,3+x);
+            gotoxy(y+setpage,3+x);
             cout<<' ';
             y=y+1;
-            gotoxy(8+y,3+x);
+            gotoxy(y+setpage,3+x);
             textcolor(4,0);cout<<'@';textcolor(7,0);
         }
     }
