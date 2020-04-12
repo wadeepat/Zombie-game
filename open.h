@@ -8,13 +8,11 @@
 #include<time.h>		
 #include"MMSystem.h"
 #include<fstream>
-#include<string>
 using namespace std;
-
 class playgame{
 	public:
-	void create_account(string&);
-	void main_menu(string&);
+	void create_account();
+	void main_menu();
 		
 };
 void chaeckname(string d,vector<string> vname){
@@ -28,14 +26,14 @@ void effect(int x, int y){
     coord.Y = y; 
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
-void frame0(){
-	int i,j=79;
-	for(i = 0;i<80,j>=0;i++,j--)
+void frame(){
+	int i,j=115;
+	for(i = 40;i<115,j>=40;i++,j--)
 	{
-		effect(i,3);
+		effect(i,2);
 		Sleep(10);
 		cout<<"_";
-		effect(j,20);
+		effect(j,18);
 		Sleep(10);
 		cout<<"_";
 	}
@@ -48,116 +46,115 @@ void frame0(){
     PlaySound(L"Start.wav", NULL, SND_ASYNC | SND_FILENAME);
 }*/
 void namegame(){
-    //system("color 58");
-	for(int i=0;i<10;i++){
-		effect(5,i);cout<<" ";
+	for(int i=0;i<9;i++){
+		effect(5,i);
 		cout << "+++++++     ++++         +++++++             ++++++              ++++++++++     +++++++         +++++++    +++++       +++++           +++++++++";
 		Sleep(30);
 	}
-	for(int i=0;i<9;i++){
-		effect(5,i);cout<<" ";
-		cout << "  +        +++  +         ++++             +++     ++               ++++          ++++           ++++        +        +++  +             ++++";
-		Sleep(30);
-	}
 	for(int i=0;i<8;i++){
-		effect(5,i);cout<<" ";
+		effect(5,i);
 		cout << "  +       +++    +        ++++           +++         +              ++++           ++++         ++++         +       +++   +             ++++";
 		Sleep(30);
 	}
 	for(int i=0;i<7;i++){
-		effect(5,i);cout<<" ";
+		effect(5,i);
 		cout << "  +      +++      +       ++++          +++          +              ++++            +++++++++++++++          +      +++    +             ++++";
 		Sleep(30);
 	}
 	for(int i=0;i<6;i++){
-		effect(5,i);cout<<" ";
+		effect(5,i);
 		cout << "  +     +++        +      ++++         ++++          +              ++++             ++++     ++++           +     +++     +             ++++";
 		Sleep(30);
 	}
 	for(int i=0;i<5;i++){
-		effect(5,i);cout<<" ";
+		effect(5,i);
 		cout << "  +    +++          +     ++++         ++++          +              ++++              ++++   ++++            +    +++      +             ++++";
 		Sleep(30);
 	}
 	for(int i=0;i<4;i++){
-		effect(5,i);cout<<" ";
+		effect(5,i);
 		cout << "  +   +++            +    ++++         ++++          +              ++++               ++++ ++++             +   +++       +             ++++";
 		Sleep(30);
 	}
 	for(int i=0;i<3;i++){
-		effect(5,i);cout<<" ";
+		effect(5,i);
 		cout << "  +  +++              +   ++++         ++++          +              ++++                +++++++              +  +++        +             ++++";
 		Sleep(30);
 	}
 	for(int i=0;i<2;i++){
-		effect(5,i);cout<<" ";
+		effect(5,i);
 		cout << "  + +++                +  ++++         ++++          +              ++++                 +++++               + +++         +             ++++";
 		Sleep(30);
 	}
 	for(int i=0;i<1;i++){
-		effect(5,i);cout<<" ";
+		effect(5,i);
     	cout << "+++++++                  +++++++     ++++++++      ++++++      ++++++++++++++              +               +++++++      +++++++     ++++++++++++++";
-		effect(5,i);cout<<" ";
 		Sleep(30);
 	}
 	Sleep(2000);
 system("cls");
 }
-void playgame:: main_menu(string &nameplayer){
+void playgame:: main_menu(){
 	int j,i,x,y;
-	for(i=0;i<35;i++){
-		effect(i,12);cout<<" ";
+	for(i=38;i<75;i++){
+		effect(i,10);cout<<" ";
 		cout<<"MUTANT";
 		Sleep(40);
 	}
     //play(1);
-	for(int j=78;j>=0;j--){
-		effect(j,20);cout<<"-";
-		effect(j,4);cout<<"-";
+	for(int j=115;j>=40;j--){
+		effect(j,18);cout<<"-";
+		effect(j,2);cout<<"-";
 		Sleep(30);
 	}
 	Sleep(2000);
 	system("cls");
-	frame0();
-	effect(25,10);
+	frame();
+	effect(66,10);
     cout << "Press [Enter] to start";
     cin.get();
     playgame n;
-    n.create_account(nameplayer);
+    n.create_account();
 }
-void playgame::create_account(string &nameplayer){
+void playgame::create_account(){
 	playgame a;
 	system("cls");
-	for(int i=0;i<17;i++)
+	for(int i=5;i<23;i++)
 	{
-		effect(5,i);
+		effect(45,i);
 		cout<<"|";
-		effect(75,i);
+		effect(101,i);
 		cout<<"|";
 	}
-	effect(7,2);
+	effect(47,7);
+	string nameplayer;
     cout << "Enter your name : ";
     getline(cin,nameplayer);
+	ifstream f("player.txt");
     ofstream player;
-    player.open("player.txt",ios::app);
-	player<<nameplayer;
+    string text;
+    player.open("D:\\Zombie-game\\player.txt",ios::app);
+	while(getline(f,text)){
+        player << text << "\n" ;
+    }
+    player << nameplayer << "\n";
     player.close();
-	effect(35,13);
+	effect(70,14);
 	cout<<" SUBMIT";
 	char c;
 	c=getche();
-	effect(10,15);
+	effect(70,18);
 	cout<<"Loading";
 	Sleep(400);
 	cout<<".";
 	Sleep(400);
 	cout<<".";
 	Sleep(400);
-	cout<<"."<<endl;
+	cout<<".";
 	Sleep(400);	
 }
-void opengame(string &nameplayer){
+int main(){
     namegame();
     playgame r;
-    r.main_menu(nameplayer);
+    r.main_menu();
 }
