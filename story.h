@@ -21,7 +21,7 @@ void story(){
             gotoxy(0,i);
             cout << "                                                                                ";
     }
-    cout << "/n";
+    cout << "\n";
     int i = 1;
     showstory(i);
     i = 2;
