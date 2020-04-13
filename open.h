@@ -8,11 +8,13 @@
 #include<time.h>		
 #include"MMSystem.h"
 #include<fstream>
+#include<string>
 using namespace std;
+
 class playgame{
 	public:
-	void create_account();
-	void main_menu();
+	void create_account(string&);
+	void main_menu(string&);
 		
 };
 void chaeckname(string d,vector<string> vname){
@@ -21,12 +23,12 @@ void chaeckname(string d,vector<string> vname){
 	}
 }
 void effect(int x, int y){
-    COORD coord = {0, 0};;
+    COORD coord = {0, 0};
     coord.X = x;
     coord.Y = y; 
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
-void frame(){
+void frame0(){
 	int i,j=115;
 	for(i = 40;i<115,j>=40;i++,j--)
 	{
@@ -46,6 +48,7 @@ void frame(){
     PlaySound(L"Start.wav", NULL, SND_ASYNC | SND_FILENAME);
 }*/
 void namegame(){
+    //system("color 58");
 	for(int i=0;i<9;i++){
 		effect(5,i);
 		cout << "+++++++     ++++         +++++++             ++++++              ++++++++++     +++++++         +++++++    +++++       +++++           +++++++++";
@@ -94,7 +97,7 @@ void namegame(){
 	Sleep(2000);
 system("cls");
 }
-void playgame:: main_menu(){
+void playgame:: main_menu(string &nameplayer){
 	int j,i,x,y;
 	for(i=38;i<75;i++){
 		effect(i,10);cout<<" ";
@@ -114,9 +117,9 @@ void playgame:: main_menu(){
     cout << "Press [Enter] to start";
     cin.get();
     playgame n;
-    n.create_account();
+    n.create_account(nameplayer);
 }
-void playgame::create_account(){
+void playgame::create_account(string &nameplayer){
 	playgame a;
 	system("cls");
 	for(int i=5;i<23;i++)
@@ -127,17 +130,11 @@ void playgame::create_account(){
 		cout<<"|";
 	}
 	effect(47,7);
-	string nameplayer;
     cout << "Enter your name : ";
     getline(cin,nameplayer);
-	ifstream f("player.txt");
     ofstream player;
-    string text;
-    player.open("D:\\Zombie-game\\player.txt",ios::app);
-	while(getline(f,text)){
-        player << text << "\n" ;
-    }
-    player << nameplayer << "\n";
+    player.open("player.txt",ios::app);
+	player<<nameplayer;
     player.close();
 	effect(70,14);
 	cout<<" SUBMIT";
@@ -150,11 +147,11 @@ void playgame::create_account(){
 	Sleep(400);
 	cout<<".";
 	Sleep(400);
-	cout<<".";
+	cout<<"."<<endl;
 	Sleep(400);	
 }
-int main(){
+void opengame(string &nameplayer){
     namegame();
     playgame r;
-    r.main_menu();
+    r.main_menu(nameplayer);
 }
