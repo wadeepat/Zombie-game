@@ -112,7 +112,7 @@ void playgame:: main_menu(string &nameplayer){
 	}
 	Sleep(2000);
 	system("cls");
-	frame();
+	frame0();
 	effect(66,10);
     cout << "Press [Enter] to start";
     cin.get();
