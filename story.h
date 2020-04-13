@@ -9,14 +9,14 @@ using namespace std;
 
 void showstory(int );
 void tutorial();
-// void gotoxy(int x,int y){
-//     COORD coord;
-//     coord.X=x;
-//     coord.Y=y;
-//     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
-// }
+void gotoxy(int x,int y){
+    COORD coord;
+    coord.X=x;
+    coord.Y=y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
+}
 
-void story(){
+int main(){
     int i = 1;
     showstory(i);
     i = 2;
@@ -32,6 +32,22 @@ void story(){
             cout << "                                                                                ";
         }
         textcolor(5,0);
+        gotoxy(0,0);
+        cout << "\n\n\n\n\n\n\n\n\n";
+        cout << "..............................................................................\n";
+        Sleep(100);
+        cout << "..............................................................................\n";
+        Sleep(100);
+        cout << "..................... YOU HAVE 120 SECONDS TO FIND HERBS .....................\n";
+        Sleep(100);
+        cout << "..............................................................................\n";
+        Sleep(100);
+        cout << "..............................................................................\n";
+        Sleep(2000);
+        for(int i=0;i<100;i++){
+            gotoxy(0,i);
+            cout << "                                                                                ";
+        }
         gotoxy(0,0);
         cout << "\n\n\n\n\n\n\n\n\n";
         cout << "..............................................................................\n";
@@ -63,27 +79,27 @@ void story(){
         Sleep(100);
         cout << "\n";
         Sleep(100);
-        cout << "*****    **       *******    *****      *****\n";
+        cout << "*****    **       *******   *****   *****\n";
         Sleep(100);
-        cout << "**   **  **       **       **         **      \n";
+        cout << "**   **  **       **       **      **      \n";
         Sleep(100);
-        cout << "*****    **       *******    *****      ***** \n";
+        cout << "*****    **       *******   *****   ***** \n";
         Sleep(100);
-        cout << "**   **  **       **              **         ** \n";
+        cout << "**   **  **       **            **      ** \n";
         Sleep(100);
-        cout << "*****    *******  *******    *****      ***** \n";
+        cout << "*****    *******  *******   *****   ***** \n";
         Sleep(100);
         cout << " \n";
         Sleep(100);
-        cout << "**    **     ****     **      ** \n";
+        cout << "**    **     ****     **    ** \n";
         Sleep(100);
-        cout << "**    **   **    **   **      ** \n";
+        cout << "**    **   **    **   **    ** \n";
         Sleep(100);
-        cout << " **  **   **      **  **      ** \n";
+        cout << " **  **   **      **  **    ** \n";
         Sleep(100);
-        cout << "   **      **    **    **    ** \n";
+        cout << "   **      **    **    **  ** \n";
         Sleep(100);
-        cout << "   **        ****        **** \n\n\n";
+        cout << "   **        ****       **** \n\n\n";
         Sleep(1000);
         resetcolor();
         cout << "                                                      Londing";
@@ -406,7 +422,7 @@ void tutorial(){
     cout << "\t\t       **\n\n\n";
     resetcolor();
     Sleep(100);
-    cout << "                     !!!FIND ALL GET +1500 point!!!                           \n";
+    cout << "                     !!!FIND ALL GAT +1500 point!!!                           \n";
     Sleep(1000);
     cout << "\n\n\n";
 
