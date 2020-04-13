@@ -20,7 +20,8 @@ void story(){
     for(int i=0;i<500;i++){
             gotoxy(0,i);
             cout << "                                                                                ";
-        }
+    }
+    cout << "/n";
     int i = 1;
     showstory(i);
     i = 2;
