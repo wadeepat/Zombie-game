@@ -17,10 +17,11 @@ void tutorial();
 // }
 
 void story(){
-    for(int i=0;i<500;i++){
+    /*for(int i=0;i<500;i++){
             gotoxy(0,i);
             cout << "                                                                                ";
-    }
+    }*/
+    system("cls");
     cout << "\n";
     int i = 1;
     showstory(i);
@@ -32,10 +33,11 @@ void story(){
     if(getch())showstory(i);
     if(getch())tutorial();
     if(getch()){
-        for(int i=0;i<500;i++){
+        /*for(int i=0;i<500;i++){
             gotoxy(0,i);
             cout << "                                                                                ";
-        }
+        }*/
+        system("cls");
         textcolor(5,0);
         gotoxy(0,0);
         cout << "\n\n\n\n\n\n\n\n\n";
@@ -49,10 +51,11 @@ void story(){
         Sleep(100);
         cout << "                                                        ..............................................................................\n";
         Sleep(2000);
-        for(int i=0;i<500;i++){
+        /*for(int i=0;i<500;i++){
             gotoxy(0,i);
             cout << "                                                                                ";
-        }
+        }*/
+        system("cls");
         gotoxy(0,0);
         cout << "\n\n\n\n\n\n\n\n\n";
         cout << "                                                        ..............................................................................\n";
@@ -65,10 +68,11 @@ void story(){
         Sleep(100);
         cout << "                                                        ..............................................................................\n";
         Sleep(5000);
-        for(int i=0;i<500;i++){
+        /*for(int i=0;i<500;i++){
             gotoxy(0,i);
             cout << "                                                                                ";
-        }
+        }*/
+        system("cls");
         textcolor(14,0);
         gotoxy(0,0);
         Sleep(100);
