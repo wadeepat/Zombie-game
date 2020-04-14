@@ -10,7 +10,8 @@ using namespace std;
 
 int main(){
     system("cls");
-     string nameplayer;
+    Sleep(2000);
+    string nameplayer;
     srand(time(0));
     opengame(nameplayer);
     story();
