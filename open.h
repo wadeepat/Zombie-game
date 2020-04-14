@@ -29,8 +29,8 @@ void effect(int x, int y){
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 void frame0(){
-	int i,j=115;
-	for(i = 40;i<115,j>=40;i++,j--)
+	int i,j=126;
+	for(i = 56;i<126,j>=56;i++,j--)
 	{
 		effect(i,2);
 		Sleep(10);
@@ -99,13 +99,13 @@ system("cls");
 }
 void playgame:: main_menu(string &nameplayer){
 	int j,i,x,y;
-	for(i=38;i<75;i++){
+	for(i=56;i<90;i++){
 		effect(i,10);cout<<" ";
 		cout<<"MUTANT";
 		Sleep(40);
 	}
     //play(1);
-	for(int j=115;j>=40;j--){
+	for(int j=126;j>=56;j--){
 		effect(j,18);cout<<"-";
 		effect(j,2);cout<<"-";
 		Sleep(30);
@@ -113,7 +113,7 @@ void playgame:: main_menu(string &nameplayer){
 	Sleep(2000);
 	system("cls");
 	frame0();
-	effect(66,10);
+	effect(80,10);
     cout << "Press [Enter] to start";
     cin.get();
     playgame n;
@@ -124,23 +124,23 @@ void playgame::create_account(string &nameplayer){
 	system("cls");
 	for(int i=5;i<23;i++)
 	{
-		effect(45,i);
+		effect(56,i);
 		cout<<"|";
-		effect(101,i);
+		effect(126,i);
 		cout<<"|";
 	}
-	effect(47,7);
+	effect(58,7);
     cout << "Enter your name : ";
     getline(cin,nameplayer);
     ofstream player;
     player.open("player.txt",ios::app);
 	player<<nameplayer<<"\n";
     player.close();
-	effect(70,14);
+	effect(86,14);
 	cout<<" SUBMIT";
 	char c;
 	c=getche();
-	effect(70,18);
+	effect(87,18);
 	cout<<"Loading";
 	Sleep(400);
 	cout<<".";
