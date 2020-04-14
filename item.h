@@ -144,22 +144,22 @@ void chilli(){
 }
 
 void mangosteen(){
-    textcolor(13,0);gotoxy(35+48,8);       cout<<"           ***            ";
-    gotoxy(35+48,9);                       cout<<"         *******          ";
-    gotoxy(35+48,10);                      cout<<"         *******          ";
-    gotoxy(35+48,11);                      cout<<"           ***            ";
+    textcolor(13,0);gotoxy(35+48,8);       cout<<"            ***           ";
+    gotoxy(35+48,9);                       cout<<"          *******         ";
+    gotoxy(35+48,10);                      cout<<"          *******         ";
+    gotoxy(35+48,11);                      cout<<"            ***           ";
     gotoxy(35+48,12);                      cout<<"                          ";
     gotoxy(35+48,13);textcolor(6,0);       cout<<"  You found a mangosteen. "; textcolor(7,0);
 }
 
 void serumanimal(){
-    textcolor(15,0);gotoxy(35+48,6);       cout<<"          ****\n";
-    gotoxy(35+48,7);                       cout<<"          ****\n";
-    gotoxy(35+48,8);                       cout<<"          *";textcolor(14,0);cout << "**";textcolor(15,0);cout << "*\n";
-    gotoxy(35+48,9);                       cout<<"          *";textcolor(14,0);cout << "**";textcolor(15,0);cout << "*\n";
-    gotoxy(35+48,10);                      cout<<"          *";textcolor(14,0);cout << "**";textcolor(15,0);cout << "*\n";
-    gotoxy(35+48,11);                      cout<<"          *";textcolor(14,0);cout << "**";textcolor(15,0);cout << "*\n";
-    gotoxy(35+48,12);                      cout<<"           **\n";
+    textcolor(15,0);gotoxy(35+48,6);       cout<<"           ****\n";
+    gotoxy(35+48,7);                       cout<<"           ****\n";
+    gotoxy(35+48,8);                       cout<<"           *";textcolor(14,0);cout << "**";textcolor(15,0);cout << "*\n";
+    gotoxy(35+48,9);                       cout<<"           *";textcolor(14,0);cout << "**";textcolor(15,0);cout << "*\n";
+    gotoxy(35+48,10);                      cout<<"           *";textcolor(14,0);cout << "**";textcolor(15,0);cout << "*\n";
+    gotoxy(35+48,11);                      cout<<"           *";textcolor(14,0);cout << "**";textcolor(15,0);cout << "*\n";
+    gotoxy(35+48,12);                      cout<<"            **\n";
     gotoxy(35+48,13);textcolor(6,0);       cout<<" You found an animal serum. ";textcolor(7,0);
 }
 

@@ -147,7 +147,6 @@ void gamestart(string nameplayer,int &score){
             press='d';
             move(press,x,y,score,locmap,runtime,item,name,hp,atk,itemquest);
         }
-        if(GetAsyncKeyState(0x46))gamerunning=false;
         if(hp==0){missionfailed();gamerunning=false;}
         if(itemquest==4){score+=1500;missioncleared();gamerunning=false;}
         Sleep(80);  
